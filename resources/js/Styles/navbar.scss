@@ -1,0 +1,63 @@
+@use './app.scss' as *;
+@use './colors.scss' as *;
+
+$font-size:              1rem;
+
+.navigationbar {
+    background-color: $black;
+    font-size:        $font-size;
+
+    .navbar {
+        .navbar-toggler {
+            color:   $white;
+            border:  none;
+            outline: none;
+        }
+
+        .navbar-collapse {
+            &.show {
+                .navbar-nav {
+                    align-items: center;
+
+                    &__item {
+                        padding: 0.5em 0;
+                    }
+                }
+            }
+
+            .navbar-nav {
+                &__item {
+                    color:           $base-navbar-item-color;
+                    font-family:     Oswald;
+                    font-size:       1.2em;
+                    padding:         0 0.8em;
+                    text-transform:  uppercase;
+                    text-decoration: none;
+    
+                    &:hover {
+                        color: $white;
+                    }
+                }
+
+                &:nth-child(2) {
+                    align-items: center;
+
+                    button {
+                        background-color: $nj-orange;
+                        border-color:     $nj-orange;
+                        padding:          0.5em;
+                        color:            $white;
+
+                        &:hover {
+                            opacity: 0.8;
+                        }
+                    }
+
+                    .navbar-nav__item {
+                        font-size: 0.9em;
+                    }
+                }
+            }
+        }
+    }
+}

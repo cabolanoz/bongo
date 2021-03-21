@@ -1,0 +1,35 @@
+@use './app.scss' as *;
+@use './colors.scss' as *;
+
+.social-stick-group {
+    display:          flex;
+    flex-direction:   column;
+    position:         fixed;
+    top:              calc(100vh / 2 - 50px);
+    right:            0;
+    padding:          0;
+    margin:           0;
+    background-color: $social-background-color;
+
+    li {
+        list-style: none;
+
+        .dropdown-divider {
+            border-color: $social-separator-color;
+            border-width: 2px;
+        }
+    }
+
+    &__item {
+        color:   $white;
+        padding: 0.8rem 1.2rem;
+
+        &:first-child {
+            padding-bottom: 0.4rem;
+        }
+
+        &:last-child {
+            padding-top: 0.4rem;
+        }
+    }
+}
