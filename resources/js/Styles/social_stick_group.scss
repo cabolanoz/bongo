@@ -1,5 +1,5 @@
-@use './app.scss' as *;
-@use './colors.scss' as *;
+@use '../../css/app.scss' as *;
+@use '../../css/colors.scss' as *;
 
 .social-stick-group {
     display:          flex;

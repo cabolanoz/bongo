@@ -1,0 +1,13 @@
+@use './colors.scss' as *;
+
+.message {
+    font-family:    "Oswald";
+    font-size:      1.5rem;
+    font-weight:    normal;
+    line-height:    1.5em;
+    text-transform: uppercase;
+
+    b:last-of-type {
+        color: $nj-orange;
+    }
+}

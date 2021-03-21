@@ -7,8 +7,8 @@
 </template>
 
 <script>
-import Navbar from './Components/Navbar.vue';
-import SocialStickGroup from './Components/SocialStickGroup.vue';
+import Navbar from './Components/Shared/Navbar.vue';
+import SocialStickGroup from './Components/Shared/SocialStickGroup.vue';
 
 export default {
     name: 'app',

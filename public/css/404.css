@@ -1,0 +1,10 @@
+.message {
+  font-family: "Oswald";
+  font-size: 1.5rem;
+  font-weight: normal;
+  line-height: 1.5em;
+  text-transform: uppercase;
+}
+.message b:last-of-type {
+  color: #f58f00;
+}
