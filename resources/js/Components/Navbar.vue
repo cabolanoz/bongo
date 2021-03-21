@@ -20,7 +20,13 @@
                         <b-link class="navbar-nav__item" href="#">INICIA SESIÓN</b-link>
                         <b-button size="sm" class="navbar-nav__item my-2 my-sm-0">REGISTRÁTE</b-button>
                         <b-link class="navbar-nav__item" href="#">SUSCRIBÍTE</b-link>
-                        <b-link class="navbar-nav__item" href="#">ANÚNCIATE</b-link>
+                        <b-link
+                            class="navbar-nav__item"
+                            href="http://nosjuimos.com/conecta"
+                            target="_blank"
+                        >
+                            ANÚNCIATE
+                        </b-link>
                     </b-navbar-nav>
                 </b-collapse>
             </b-navbar>
