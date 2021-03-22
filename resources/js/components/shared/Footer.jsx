@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { showTermsModal } from '../../actions';
+import { showTermsModal, showCollaboratorsModal } from '../../actions';
 import useAppState from '../../hooks/useAppState';
 import { Routes } from '../../const';
 
@@ -17,13 +17,13 @@ const Footer = () => {
         <ul className="navbar-nav ml-auto">
           <a className="navbar-nav__item" onClick={() => showTermsModal(dispatch)}>TÉRMINOS Y USOS</a>
           <Link className="navbar-nav__item" to={Routes.root()}>CONTÁCTENOS</Link>
-          <Link className="navbar-nav__item" to={Routes.root()}>COLABORADORES</Link>
+          <a className="navbar-nav__item" onClick={() => showCollaboratorsModal(dispatch)}>COLABORADORES</a>
           <a
             className="navbar-nav__item"
             href="http://www.detrasdelsofarojo.com"
             target="_blank"
           >
-            <img src="img/sr-logo.png" alt="Sofá Rojo Logo" />
+            <img src="images/sr-logo.png" alt="Sofá Rojo Logo" />
           </a>
         </ul>
       </div>

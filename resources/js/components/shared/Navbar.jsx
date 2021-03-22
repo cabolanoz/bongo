@@ -14,7 +14,7 @@ const Navbar = () => {
       <div className="container">
         <nav className="navbar navbar-expand-lg navbar-dark">
           <Link className="navbar-brand" to={Routes.root()}>
-            <img className="img-fluid" src="img/logo.png" alt="Logo" />
+            <img className="img-fluid" src="images/logo.png" alt="Logo" />
           </Link>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>

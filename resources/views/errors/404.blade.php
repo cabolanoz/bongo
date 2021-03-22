@@ -6,7 +6,7 @@
 <div class="container">
     <div class="col-md-6 offset-md-3 d-flex flex-column my-5">
         <picture class="text-center">
-            <img class="img-fluid" src="img/404.png" alt="404">
+            <img class="img-fluid" src="images/404.png" alt="404">
         </picture>
         <h4 class="message mt-5 text-center">
             <b>ERROR 404</b>

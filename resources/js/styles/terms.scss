@@ -1,13 +1,8 @@
 @use '../../sass/app.scss' as *;
 
-.modal-terms {
-  .modal-dialog {
-    max-width: 100%;
-    margin:    6em 0 !important;
-  }
-}
-
 .terms {
+  padding: 6em 0;
+
   &__title {
     font-family: "Oswald";
     font-size:   1.8em;

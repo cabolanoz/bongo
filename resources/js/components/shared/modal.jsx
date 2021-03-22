@@ -1,7 +1,7 @@
 import React from 'react';
 import useAppState from '../../hooks/useAppState';
 import { ModalName } from '../../const';
-import { LoginModal, TermsModal } from './modal_types';
+import { LoginModal, TermsModal, CollaboratorsModal } from './modal_types';
 
 const Modal = () => {
   const [{ modal = null },] = useAppState();
@@ -14,6 +14,8 @@ const Modal = () => {
       return <LoginModal />;
     case ModalName.terms:
       return <TermsModal />;
+    case ModalName.collaborators:
+      return <CollaboratorsModal />;
     default:
       return null;
   }
