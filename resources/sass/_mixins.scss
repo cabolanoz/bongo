@@ -1,0 +1,7 @@
+@mixin sprite-vertical-hover($primary-height) {
+  background-position: 0 0;
+
+  &:hover{
+    background-position: 0 - $primary-height;
+  }
+}

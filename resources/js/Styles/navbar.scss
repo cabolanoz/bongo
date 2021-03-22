@@ -35,15 +35,11 @@
           }
 
           &:nth-child(2) {
-            button {
+            button.btn-custom {
               background-color: $nj-orange;
               border-color:     $nj-orange;
               padding:          0.5em;
               color:            $white;
-
-              &:hover {
-                opacity: 0.8;
-              }
             }
 
             .navbar-nav__item {

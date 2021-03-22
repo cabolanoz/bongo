@@ -1,0 +1,31 @@
+@use '../../sass/app.scss' as *;
+
+.modal-terms {
+  .modal-dialog {
+    max-width: 100%;
+    margin:    6em 0 !important;
+  }
+}
+
+.terms {
+  &__title {
+    font-family: "Oswald";
+    font-size:   1.8em;
+  }
+
+  &__subtitle {
+    font-family: "Source Sans Pro";
+    font-size:   1.4em;
+    font-weight: bold;
+  }
+
+  &__date {
+    font-family: "Source Sans Pro";
+    font-size:   0.8em;
+  }
+
+  &__paragraph {
+    font-family: "Source Sans Pro";
+    font-size:   1em;
+  }
+}
