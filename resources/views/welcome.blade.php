@@ -1,7 +1,7 @@
-<x-layout>
-    <div id="app">
-        <app></app>
-    </div>
+@extends('layouts.app')
 
-    <script src="{{ mix('js/app.js') }}"></script>
-</x-layout>
+@section('content')
+<div id="app"></div>
+
+<script src="{{ asset('js/app.js') }}" defer></script>
+@endsection

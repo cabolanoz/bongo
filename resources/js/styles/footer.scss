@@ -1,0 +1,44 @@
+@use '../../sass/app.scss' as *;
+
+.footer {
+  background-color: $black;
+  font-family:      'Source Sans Pro';
+  font-size:        0.9em;
+  position:         fixed;
+  bottom:           0;
+  width:            100vw;
+  text-align:       center;
+
+  @include media-breakpoint-up(lg) {
+    text-align: inherit;
+  }
+
+  &__copyright {
+    color:   $footer-text-color;
+    display: inline-block;
+    padding: 1em 0;
+  }
+
+  .navbar-nav {
+    @include media-breakpoint-up(lg) {
+      flex-direction: row;
+      float:          right;
+      display:        inline-block;
+    }
+
+    &__item {
+      color:           $footer-text-color;
+      text-transform:  uppercase;
+      text-decoration: none;
+      margin:          0.4em 0;
+
+      @include media-breakpoint-up(lg) {
+        margin: 0 1em;
+      }
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}

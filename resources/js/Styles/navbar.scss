@@ -1,63 +1,56 @@
-@use '../../css/app.scss' as *;
-@use '../../css/colors.scss' as *;
-
-$font-size:              1rem;
+@use '../../sass/app.scss' as *;
 
 .navigationbar {
-    background-color: $black;
-    font-size:        $font-size;
+  background-color: $black;
+  font-size:        $font-size-base;
 
-    .navbar {
-        .navbar-toggler {
-            color:   $white;
-            border:  none;
-            outline: none;
-        }
+  .navbar {
+    .navbar-toggler {
+      border:  none;
+      outline: none;
+    }
 
-        .navbar-collapse {
-            &.show {
-                .navbar-nav {
-                    align-items: center;
+    .navbar-collapse {
+        // &.show {
+        //     .navbar-nav {
+        //         &__item {
+        //             padding: 0.5em 0;
+        //         }
+        //     }
+        // }
 
-                    &__item {
-                        padding: 0.5em 0;
-                    }
-                }
+        .navbar-nav {
+          align-items: center;
+
+          &__item {
+            color:           $base-navbar-item-color;
+            font-size:       1.2em;
+            padding:         0 0.8em;
+            text-transform:  uppercase;
+            text-decoration: none;
+
+            &:hover {
+              color: $white;
+            }
+          }
+
+          &:nth-child(2) {
+            button {
+              background-color: $nj-orange;
+              border-color:     $nj-orange;
+              padding:          0.5em;
+              color:            $white;
+
+              &:hover {
+                opacity: 0.8;
+              }
             }
 
-            .navbar-nav {
-                &__item {
-                    color:           $base-navbar-item-color;
-                    font-family:     "Oswald";
-                    font-size:       1.2em;
-                    padding:         0 0.8em;
-                    text-transform:  uppercase;
-                    text-decoration: none;
-    
-                    &:hover {
-                        color: $white;
-                    }
-                }
-
-                &:nth-child(2) {
-                    align-items: center;
-
-                    button {
-                        background-color: $nj-orange;
-                        border-color:     $nj-orange;
-                        padding:          0.5em;
-                        color:            $white;
-
-                        &:hover {
-                            opacity: 0.8;
-                        }
-                    }
-
-                    .navbar-nav__item {
-                        font-size: 0.9em;
-                    }
-                }
+            .navbar-nav__item {
+              font-size: 0.9em;
             }
+          }
         }
     }
+  }
 }
