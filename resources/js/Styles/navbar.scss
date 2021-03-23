@@ -29,6 +29,12 @@
             text-transform:  uppercase;
             text-decoration: none;
 
+            &--active {
+              @extend .navbar-nav__item;
+
+              color: $white;
+            }
+
             &:hover {
               color: $white;
             }

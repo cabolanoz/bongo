@@ -4,6 +4,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\AlbumController;
+use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\CommercialController;
 
 /*
@@ -23,5 +25,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::apiResources([
     'categories' => CategoryController::class,
+    'albums' => AlbumController::class,
+    'photos' => PhotoController::class,
     'commercials' => CommercialController::class,
 ]);

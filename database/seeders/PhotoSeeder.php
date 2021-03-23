@@ -3,9 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Category;
+use App\Models\Photo;
 
-class CategorySeeder extends Seeder
+class PhotoSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,56 +15,42 @@ class CategorySeeder extends Seeder
     public function run()
     {
         \DB::statement("SET foreign_key_checks=0");
-        Category::truncate();
+        Photo::truncate();
         \DB::statement("SET foreign_key_checks=1");
 
-        Category::insert(
+        Photo::insert(
             [
                 [
-                    'name' => 'Cultura',
-                    'css_class' => 'culture',
+                    'desktop_asset' => 'http://nosjuimos.com/Gallery/thumbnail/128/img1754-800x445-58e87.jpg',
+                    'album_id' => 1,
                     'created_by' => 1,
                     'created_at' => \Carbon\Carbon::now(),
                     'updated_at' => \Carbon\Carbon::now()
                 ],
                 [
-                    'name' => 'Música',
-                    'css_class' => 'music',
+                    'desktop_asset' => 'http://nosjuimos.com/Gallery/thumbnail/128/p-8efed.jpg',
+                    'album_id' => 1,
                     'created_by' => 1,
                     'created_at' => \Carbon\Carbon::now(),
                     'updated_at' => \Carbon\Carbon::now()
                 ],
                 [
-                    'name' => 'Danza',
-                    'css_class' => 'dance',
+                    'desktop_asset' => 'http://nosjuimos.com/Gallery/thumbnail/128/t-ee0e1.jpg',
+                    'album_id' => 1,
                     'created_by' => 1,
                     'created_at' => \Carbon\Carbon::now(),
                     'updated_at' => \Carbon\Carbon::now()
                 ],
                 [
-                    'name' => 'Teatro',
-                    'css_class' => 'theater',
+                    'desktop_asset' => 'http://nosjuimos.com/Gallery/thumbnail/128/y-87ef6.jpg',
+                    'album_id' => 1,
                     'created_by' => 1,
                     'created_at' => \Carbon\Carbon::now(),
                     'updated_at' => \Carbon\Carbon::now()
                 ],
                 [
-                    'name' => 'Cine',
-                    'css_class' => 'cinema',
-                    'created_by' => 1,
-                    'created_at' => \Carbon\Carbon::now(),
-                    'updated_at' => \Carbon\Carbon::now()
-                ],
-                [
-                    'name' => 'Aventura',
-                    'css_class' => 'adventure',
-                    'created_by' => 1,
-                    'created_at' => \Carbon\Carbon::now(),
-                    'updated_at' => \Carbon\Carbon::now()
-                ],
-                [
-                    'name' => 'Voluntariado',
-                    'css_class' => 'volunteering',
+                    'desktop_asset' => 'http://nosjuimos.com/Gallery/thumbnail/128/i-b6c06.jpg',
+                    'album_id' => 1,
                     'created_by' => 1,
                     'created_at' => \Carbon\Carbon::now(),
                     'updated_at' => \Carbon\Carbon::now()

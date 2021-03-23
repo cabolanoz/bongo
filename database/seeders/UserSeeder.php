@@ -14,10 +14,14 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        \DB::statement("SET foreign_key_checks=0");
+        User::truncate();
+        \DB::statement("SET foreign_key_checks=1");
+
         User::create([
             'name' => env('ADMIN_USER'),
             'email' => env('ADMIN_EMAIL'),
-            'password' => Hash::make(env('ADMIN_PASSWORD')),
+            'password' => \Hash::make(env('ADMIN_PASSWORD')),
             'is_admin' => true
         ]);
     }

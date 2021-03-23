@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import classNames from 'classnames';
 import { showLoginModal } from '../../actions';
 import useAppState from '../../hooks/useAppState';
 import { Routes } from '../../const';
@@ -8,6 +9,13 @@ import '../../styles/navbar.scss';
 
 const Navbar = () => {
   const [, dispatch] = useAppState();
+  const location = useLocation();
+
+  const isEnjoyableNavActive = () => location.pathname === Routes.root();
+  const enjoyableClassName = classNames({
+    'navbar-nav__item': !isEnjoyableNavActive,
+    'navbar-nav__item--active': isEnjoyableNavActive
+  });
 
   return (
     <div className="navigationbar">
@@ -23,6 +31,7 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbar">
             {/* Left | Normal navigation */}
             <ul className="navbar-nav">
+              <Link className={enjoyableClassName} to={Routes.root()}>JUÍMONOS</Link>
               <Link className="navbar-nav__item" to={Routes.root()}>TULA CUECHO</Link>
               <Link className="navbar-nav__item" to={Routes.root()}>SALIMOS TUANI</Link>
             </ul>
