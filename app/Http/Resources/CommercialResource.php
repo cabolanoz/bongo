@@ -16,6 +16,7 @@ class CommercialResource extends JsonResource
     {
         return [
             'id' => $this->id,
+            'name' => $this->name,
             'desktop_picture' => $this->desktop_picture,
             'mobile_picture' => $this->mobile_picture,
             'picture_url' => $this->picture_url,

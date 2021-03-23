@@ -15,6 +15,7 @@ class Commercial extends Model
      * @var array
      */
     protected $fillable = [
+        'name',
         'desktop_picture',
         'mobile_picture',
         'picture_url',
