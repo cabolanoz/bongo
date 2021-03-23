@@ -21,7 +21,7 @@ class AlbumSeeder extends Seeder
         $faker = \Faker\Factory::create();
 
         Album::create([
-            'name' => $faker->title,
+            'name' => $faker->name,
             'description' => $faker->text,
             'spectacle_thumbnail' => 'http://nosjuimos.com/Gallery/thumbnail/128/img1754-800x445-58e87.jpg',
             'spectacle_date' => \Carbon\Carbon::now(),
