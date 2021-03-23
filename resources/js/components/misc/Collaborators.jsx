@@ -2,7 +2,7 @@ import React from 'react';
 
 import '../../styles/collaborators.scss';
 
-const COLLABORATOR_PATH = 'images/collaborators/';
+const COLLABORATOR_PATH = '/images/collaborators/';
 const COLLABORATORS = Object.freeze([
   { logo: 'nj_andlogo.jpg', siteUrl: '' },
   { logo: 'nj_rutamayalogo.jpg', siteUrl: '' },
@@ -26,7 +26,7 @@ const COLLABORATORS = Object.freeze([
   { logo: 'nj-ccguanuca.jpg', siteUrl: 'https://www.facebook.com/Centro-Cultural-Guanuca-311210419814/' }
 ]);
 
-const ALLY_PATH = 'images/allies/';
+const ALLY_PATH = '/images/allies/';
 const ALLIES = Object.freeze([
   { logo: 'nj-ChacuaTool.jpg', siteUrl: 'http://www.chacuatool.com/' },
   { logo: 'nj-NicaMovil.jpg', siteUrl: '' },

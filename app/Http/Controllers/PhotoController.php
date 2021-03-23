@@ -39,7 +39,7 @@ class PhotoController extends Controller
      */
     public function show($id)
     {
-        return new PhotoResource(Photo::find($id));
+        return new PhotoResource(Photo::find($id)->with('album')->first());
     }
 
     /**

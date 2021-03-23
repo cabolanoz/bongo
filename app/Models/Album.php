@@ -16,9 +16,49 @@ class Album extends Model
      */
     protected $fillable = [
         'name',
+        'slug',
         'description',
         'spectacle_thumbnail',
         'spectacle_date',
         'published',
     ];
+
+     /**
+     * The "booted" method of the model.
+     *
+     * @return void
+     */
+    protected static function booted()
+    {
+        static::created(function ($album) {
+            $album->slug = \Str::slug($album->name, '-') . '-' . $album->id;
+            $album->saveQuietly();
+        });
+    }
+
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    /**
+     * Get all of the photos for the album.
+     */
+    public function photos()
+    {
+        return $this->hasMany(Photo::class);
+    }
+
+    /**
+     * Get photos quantity for the album.
+     */
+    public function photos_quantity()
+    {
+        return $this->photos()->count();
+    }
 }

@@ -11,7 +11,7 @@
 
         <link href="http://nosjuimos.com/images/nj.ico" rel="shortcut icon">
 
-        <link rel="stylesheet" href="css/app.css" />
+        <link rel="stylesheet" href="/css/app.css" />
     </head>
     <body>
         @yield('content')

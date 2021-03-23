@@ -1,7 +1,7 @@
 /**
  * Commercials specific actions.
  */
- export const COMMERCIALS_FETCHED = 'COMMERCIALS_FETCHED';
+export const COMMERCIALS_FETCHED = 'COMMERCIALS_FETCHED';
 
 /**
  * Modal actions.

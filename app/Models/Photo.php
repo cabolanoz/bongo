@@ -22,4 +22,12 @@ class Photo extends Model
         'published',
         'album_id',
     ];
+
+    /**
+     * Get the photo's owner.
+     */
+    public function album()
+    {
+        return $this->belongsTo(Album::class);
+    }
 }

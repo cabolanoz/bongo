@@ -21,6 +21,7 @@ class PhotoResource extends JsonResource
             'desktop_asset' => $this->desktop_asset,
             'mobile_asset' => $this->mobile_asset,
             'published' => $this->published,
+            'album' => $this->album,
         ];
     }
 }

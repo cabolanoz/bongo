@@ -69,6 +69,10 @@ class Api {
    * API methods.
    */
 
+  async getAlbums() {
+    return this.get('albums');
+  }
+
   async getCommercials() {
     return this.get('commercials');
   }
