@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Resources\CommercialCollection;
-use App\Http\Resources\CommercialResource;
-use App\Models\Commercial;
+use App\Http\Resources\CategoryCollection;
+use App\Http\Resources\CategoryResource;
+use App\Models\Category;
 
-class CommercialController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,7 @@ class CommercialController extends Controller
      */
     public function index()
     {
-        return new CommercialCollection(Commercial::available());
+        return new CategoryCollection(Category::all());
     }
 
     /**
@@ -39,7 +39,7 @@ class CommercialController extends Controller
      */
     public function show($id)
     {
-        return new CommercialResource(Commercial::find($id));
+        return new CategoryResource(Category::find($id));
     }
 
     /**

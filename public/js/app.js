@@ -2677,7 +2677,9 @@ var CarouselIndicator = function CarouselIndicator(_ref) {
 var CarouselItem = function CarouselItem(_ref2) {
   var active = _ref2.active,
       desktopPicture = _ref2.desktopPicture,
-      pictureUrl = _ref2.pictureUrl;
+      mobilePicture = _ref2.mobilePicture,
+      pictureUrl = _ref2.pictureUrl,
+      isDesktop = _ref2.isDesktop;
   var cssClassName = classnames__WEBPACK_IMPORTED_MODULE_1___default()('carousel-item', {
     active: active
   });
@@ -2687,9 +2689,9 @@ var CarouselItem = function CarouselItem(_ref2) {
       href: pictureUrl,
       target: "_blank",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-        src: desktopPicture,
-        alt: "Ad",
-        className: "img-fluid"
+        className: "img-fluid",
+        src: isDesktop ? desktopPicture : mobilePicture,
+        alt: "Ad"
       })
     })
   });
@@ -2702,9 +2704,26 @@ var Commercials = function Commercials() {
       commercials = _useAppState2$0$comme === void 0 ? [] : _useAppState2$0$comme,
       dispatch = _useAppState2[1];
 
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(window.innerWidth),
+      _useState2 = _slicedToArray(_useState, 2),
+      windowWidth = _useState2[0],
+      setWindowWidth = _useState2[1];
+
+  var isDesktop = windowWidth >= 992;
+  var isMobile = windowWidth < 992;
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     (0,_actions__WEBPACK_IMPORTED_MODULE_3__.fetchCommercials)(dispatch);
   }, []);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var handleResize = function handleResize() {
+      return setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return function () {
+      window.removeEventListener('resize', handleResize);
+    };
+  });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
     className: "bg-white m-3",
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
@@ -2722,7 +2741,9 @@ var Commercials = function Commercials() {
         className: "carousel-inner",
         children: commercials.map(function (commercial, index) {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(CarouselItem, _objectSpread({
-            active: index === 0
+            active: index === 0,
+            isDesktop: isDesktop,
+            isMobile: isMobile
           }, commercial), index);
         })
       })]
@@ -2746,12 +2767,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions */ "./resources/js/actions/index.js");
-/* harmony import */ var _hooks_useAppState__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../hooks/useAppState */ "./resources/js/hooks/useAppState.js");
-/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../const */ "./resources/js/const/index.js");
-/* harmony import */ var _styles_footer_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../styles/footer.scss */ "./resources/js/styles/footer.scss");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions */ "./resources/js/actions/index.js");
+/* harmony import */ var _hooks_useAppState__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../hooks/useAppState */ "./resources/js/hooks/useAppState.js");
+/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../const */ "./resources/js/const/index.js");
+/* harmony import */ var _styles_footer_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../styles/footer.scss */ "./resources/js/styles/footer.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -2774,40 +2795,40 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var Footer = function Footer() {
-  var _useAppState = (0,_hooks_useAppState__WEBPACK_IMPORTED_MODULE_3__.default)(),
+  var _useAppState = (0,_hooks_useAppState__WEBPACK_IMPORTED_MODULE_2__.default)(),
       _useAppState2 = _slicedToArray(_useAppState, 2),
       dispatch = _useAppState2[1];
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("footer", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("footer", {
     className: "footer",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       className: "container",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
         className: "footer__copyright",
         children: "Todos los derechos reservados - nosjuimos.com. Un producto del Sof\xE1 Rojo S.A."
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("ul", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("ul", {
         className: "navbar-nav ml-auto",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("a", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
           className: "navbar-nav__item",
           onClick: function onClick() {
-            return (0,_actions__WEBPACK_IMPORTED_MODULE_2__.showTermsModal)(dispatch);
+            return (0,_actions__WEBPACK_IMPORTED_MODULE_1__.showTermsModal)(dispatch);
           },
           children: "T\xC9RMINOS Y USOS"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
           className: "navbar-nav__item",
-          to: _const__WEBPACK_IMPORTED_MODULE_4__.Routes.root(),
+          to: _const__WEBPACK_IMPORTED_MODULE_3__.Routes.root(),
           children: "CONT\xC1CTENOS"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("a", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
           className: "navbar-nav__item",
           onClick: function onClick() {
-            return (0,_actions__WEBPACK_IMPORTED_MODULE_2__.showCollaboratorsModal)(dispatch);
+            return (0,_actions__WEBPACK_IMPORTED_MODULE_1__.showCollaboratorsModal)(dispatch);
           },
           children: "COLABORADORES"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("a", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
           className: "navbar-nav__item",
           href: "http://www.detrasdelsofarojo.com",
           target: "_blank",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
             src: "images/sr-logo.png",
             alt: "Sof\xE1 Rojo Logo"
           })
@@ -2833,12 +2854,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions */ "./resources/js/actions/index.js");
-/* harmony import */ var _hooks_useAppState__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../hooks/useAppState */ "./resources/js/hooks/useAppState.js");
-/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../const */ "./resources/js/const/index.js");
-/* harmony import */ var _styles_navbar_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../styles/navbar.scss */ "./resources/js/styles/navbar.scss");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions */ "./resources/js/actions/index.js");
+/* harmony import */ var _hooks_useAppState__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../hooks/useAppState */ "./resources/js/hooks/useAppState.js");
+/* harmony import */ var _const__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../const */ "./resources/js/const/index.js");
+/* harmony import */ var _styles_navbar_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../styles/navbar.scss */ "./resources/js/styles/navbar.scss");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -2861,25 +2882,25 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 var Navbar = function Navbar() {
-  var _useAppState = (0,_hooks_useAppState__WEBPACK_IMPORTED_MODULE_3__.default)(),
+  var _useAppState = (0,_hooks_useAppState__WEBPACK_IMPORTED_MODULE_2__.default)(),
       _useAppState2 = _slicedToArray(_useAppState, 2),
       dispatch = _useAppState2[1];
 
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
     className: "navigationbar",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
       className: "container",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("nav", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("nav", {
         className: "navbar navbar-expand-lg navbar-dark",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
           className: "navbar-brand",
-          to: _const__WEBPACK_IMPORTED_MODULE_4__.Routes.root(),
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("img", {
+          to: _const__WEBPACK_IMPORTED_MODULE_3__.Routes.root(),
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("img", {
             className: "img-fluid",
             src: "images/logo.png",
             alt: "Logo"
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
           className: "navbar-toggler",
           type: "button",
           "data-toggle": "collapse",
@@ -2887,38 +2908,38 @@ var Navbar = function Navbar() {
           "aria-controls": "navbar",
           "aria-expanded": "false",
           "aria-label": "Toggle navigation",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
             className: "navbar-toggler-icon"
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
           className: "collapse navbar-collapse",
           id: "navbar",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("ul", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("ul", {
             className: "navbar-nav",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
               className: "navbar-nav__item",
-              to: _const__WEBPACK_IMPORTED_MODULE_4__.Routes.root(),
+              to: _const__WEBPACK_IMPORTED_MODULE_3__.Routes.root(),
               children: "TULA CUECHO"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Link, {
               className: "navbar-nav__item",
-              to: _const__WEBPACK_IMPORTED_MODULE_4__.Routes.root(),
+              to: _const__WEBPACK_IMPORTED_MODULE_3__.Routes.root(),
               children: "SALIMOS TUANI"
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("ul", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("ul", {
             className: "navbar-nav ml-auto",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
               className: "btn btn-link navbar-nav__item",
               onClick: function onClick() {
-                return (0,_actions__WEBPACK_IMPORTED_MODULE_2__.showLoginModal)(dispatch);
+                return (0,_actions__WEBPACK_IMPORTED_MODULE_1__.showLoginModal)(dispatch);
               },
               children: "INICIA SESI\xD3N"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
               className: "btn btn-custom navbar-nav__item my-2 my-sm-0",
               children: "REGISTR\xC1TE"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("button", {
               className: "btn btn-link navbar-nav__item",
               children: "SUSCRIB\xCDTE"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("a", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("a", {
               className: "navbar-nav__item",
               href: "http://nosjuimos.com/conecta",
               target: "_blank",
