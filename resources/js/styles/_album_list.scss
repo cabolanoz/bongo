@@ -1,0 +1,63 @@
+@use '../../sass/app.scss' as *;
+
+main.album-list {
+  .card-link {
+    text-decoration: none;
+  }
+
+  .card {
+    border-radius: 0;
+    border:        none;
+
+    &:hover {
+      .card-img-top__overlay {
+        opacity: 0.9;
+      }
+    }
+
+    .card-img-top {
+      border-radius: 0;
+      position:      relative;
+      height:        $card-img-top-height;
+
+      &__overlay {
+        height: 100%;
+  
+        &::before {
+          content: '';
+          background: rgba(0, 0, 0, 0.5);
+          height:     100%;
+          left:       0;
+          opacity:    1;
+          position:   absolute;
+          top:        0;
+          width:      100%;
+        }
+
+        img {
+          height:     100%;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .card-body {
+      background-color: $card-caption-background-color;
+
+      .card-title {
+        font-family:    'Oswald';
+        text-transform: uppercase;
+        color:          $black;
+        white-space:    nowrap;
+        text-overflow:  ellipsis;
+        overflow:       hidden;
+      }
+
+      .card-text {
+        font-family: 'Source Sans Pro';
+        font-size:   0.8em;
+        color:       $black;
+      }
+    }
+  }
+}

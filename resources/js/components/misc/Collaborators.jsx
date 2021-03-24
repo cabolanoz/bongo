@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../../styles/collaborators.scss';
+import '../../styles/_collaborators.scss';
 
 const COLLABORATOR_PATH = '/images/collaborators/';
 const COLLABORATORS = Object.freeze([

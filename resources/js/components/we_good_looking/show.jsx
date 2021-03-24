@@ -8,7 +8,7 @@ import { fetchAlbum } from '../../actions';
 import { Routes } from '../../const';
 import { getRandomAspectRatio } from '../../utils/helpers';
 
-import '../../styles/album_show.scss';
+import '../../styles/_album_show.scss';
 
 const Show = () => {
   const { slug } = useParams();

@@ -3,6 +3,8 @@ import classNames from 'classnames';
 import useAppState from '../../hooks/useAppState';
 import { fetchCommercials } from '../../actions';
 
+import '../../styles/_commercials.scss';
+
 const CarouselIndicator = ({ active, position }) => {
   const cssClassName = classNames({ active });
 
@@ -53,7 +55,7 @@ const Commercials = () => {
   });
 
   return (
-    <div className="bg-white m-3">
+    <div className="commercials bg-white m-3">
       <div className="carousel slide" data-ride="carousel">
         <div className="carousel-indicators">
           {commercials.map((_, index) =>

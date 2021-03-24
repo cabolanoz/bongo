@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../../styles/terms.scss';
+import '../../styles/_terms.scss';
 
 const Terms = () => (
   <div className="terms">

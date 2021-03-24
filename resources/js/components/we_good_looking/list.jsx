@@ -4,22 +4,24 @@ import { Loader } from '../shared';
 import { fetchAlbums } from '../../actions';
 import { Routes } from '../../const';
 
-import '../../styles/album_list.scss';
+import '../../styles/_album_list.scss';
 
 const AlbumCard = ({ name, slug, spectacleThumbnail, photosQuantity }) => (
-  <Link className="card-link" to={Routes.weGoodLooking({ slug })}>
-    <div className="card">
-      <div className="card-img-top">
-        <div className="card-img-top__overlay">
-          <img src={spectacleThumbnail} alt={`Albúm ${name}`} className="img-fluid"/>
+  <div className="col-md-3 col-sm-4 col-6 mb-3">
+    <Link className="card-link" to={Routes.weGoodLooking({ slug })}>
+      <div className="card">
+        <div className="card-img-top">
+          <div className="card-img-top__overlay">
+            <img src={spectacleThumbnail} alt={`Albúm ${name}`} className="img-fluid"/>
+          </div>
+        </div>
+        <div className="card-body">
+          <h5 className="card-title text-center">{name}</h5>
+          <p className="card-text text-center">{`${photosQuantity} Fotografías`}</p>
         </div>
       </div>
-      <div className="card-body">
-        <h5 className="card-title text-center">{name}</h5>
-        <p className="card-text text-center">{`${photosQuantity} Fotografías`}</p>
-      </div>
-    </div>
-  </Link>
+    </Link>
+  </div>
 );
 
 const List = () => {
@@ -41,9 +43,7 @@ const List = () => {
     <main className="album-list my-5">
       <div className="container">
         <div className="row">
-          <div className="col-md-3 col-sm-4 col-6">
-            {albums.map(album => <AlbumCard key={album.id} {...album} />)}
-          </div>
+          {albums.map(album => <AlbumCard key={album.id} {...album} />)}
         </div>
       </div>
     </main>

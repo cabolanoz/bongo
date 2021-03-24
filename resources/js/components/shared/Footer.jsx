@@ -4,7 +4,7 @@ import { showTermsModal, showCollaboratorsModal } from '../../actions';
 import useAppState from '../../hooks/useAppState';
 import { Routes } from '../../const';
 
-import '../../styles/footer.scss';
+import '../../styles/_footer.scss';
 
 const Footer = () => {
   const [, dispatch] = useAppState();

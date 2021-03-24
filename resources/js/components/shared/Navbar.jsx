@@ -4,7 +4,7 @@ import { showLoginModal } from '../../actions';
 import useAppState from '../../hooks/useAppState';
 import { Routes } from '../../const';
 
-import '../../styles/navbar.scss';
+import '../../styles/_navbar.scss';
 
 const Navbar = () => {
   const [, dispatch] = useAppState();

@@ -20,3 +20,6 @@ Route::prefix('salimos-tuani')->group(function() {
     Route::get('/', [WelcomeController::class, 'index']);
     Route::get('/{slug}', [WelcomeController::class, 'show'])->where('slug', '[0-9a-z-_]+');
 });
+
+Route::get('/terminos-y-usos', [WelcomeController::class, 'index']);
+Route::get('/colaboradores', [WelcomeController::class, 'index']);

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { hideModal } from '../../actions';
 import useAppState from '../../hooks/useAppState';
 
-import '../../styles/modal.scss';
+import '../../styles/_modal.scss';
 
 const ModalBase = ({ children }) => {
   const [, dispatch] = useAppState();

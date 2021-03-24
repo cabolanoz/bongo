@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../../styles/sticky_social.scss';
+import '../../styles/_sticky_social.scss';
 
 const StickySocial = () => (
   <div className="sticky-social" role="group">

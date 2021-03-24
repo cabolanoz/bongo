@@ -13,7 +13,9 @@ const parameterisedRoute = (pattern = '', params = {}) => {
 export const Routes = {
   root: () => '/',
   weGoodLookings: () => '/salimos-tuani',
-  weGoodLooking: (params = {}) => parameterisedRoute('/salimos-tuani/:slug([0-9a-z-_]+)', params)
+  weGoodLooking: (params = {}) => parameterisedRoute('/salimos-tuani/:slug([0-9a-z-_]+)', params),
+  terms: () => '/terminos-y-usos',
+  collaborators: () => '/colaboradores',
 };
 
 /* We good looking routes */
@@ -21,3 +23,9 @@ export const WE_GOOD_LOOKING_ROUTES = [
   Routes.weGoodLookings(),
   Routes.weGoodLooking(),
 ]
+
+/* Extra routes */
+export const EXTRA_ROUTES = [
+  Routes.terms(),
+  Routes.collaborators(),
+];

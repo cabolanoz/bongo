@@ -1,0 +1,48 @@
+@use '../../sass/app.scss' as *;
+
+.modal-container {
+  position: fixed;
+  background: rgba(230, 230, 230, .94);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $zindex-modal;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &-enter {
+    opacity: 0;
+
+    &-active {
+      opacity: 1;
+      transition: opacity 300ms;
+    }
+  }
+
+  &-exit {
+    opacity: 1;
+
+    &-active {
+      opacity: 0;
+      transition: none;
+    }
+  }
+
+  .modal-close {
+    background-image: url('~/images/close.png');
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    cursor: pointer;
+    width: 80px;
+    height: 80px;
+    margin: 10px 20px 0 0;
+    position: absolute;
+    right: 0;
+
+    &:hover {
+      background-position: 0 -114px;
+    }
+  }
+}
