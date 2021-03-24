@@ -9,6 +9,7 @@ import { Navbar, Footer, StickySocial } from './components/shared';
 import Enjoyable from './components/enjoyable';
 import WeGoodLooking from './components/we_good_looking';
 import Extra from './components/extra';
+import { ScrollToTop } from './utils';
 import Modal from './components/shared/modal';
 import { StateProvider } from './state';
 import reducer from './reducers';
@@ -25,6 +26,7 @@ const Main = initialState => (
 
     <Footer />
     <StickySocial />
+    <ScrollToTop />
     <Modal />
   </StateProvider>
 );

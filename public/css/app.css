@@ -10007,12 +10007,28 @@ h3 {
 html,
 body {
   margin: 0;
-  padding: 0;
+  padding: 2.3em 0 12em;
   height: 100%;
+}
+@media (min-width: 992px) {
+  html,
+body {
+    padding-bottom: 3em;
+  }
 }
 
 #app {
   height: 100%;
   min-height: 100%;
   position: relative;
+}
+#app main.album-list,
+#app main.album-show {
+  padding-bottom: 12em;
+}
+@media (min-width: 992px) {
+  #app main.album-list,
+#app main.album-show {
+    padding-bottom: 3em;
+  }
 }

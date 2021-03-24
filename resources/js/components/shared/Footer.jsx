@@ -13,7 +13,7 @@ const Footer = () => {
   const onCollaboratorsButtonClick = () => showCollaboratorsModal(dispatch);
 
   return (
-    <footer className="navbar-footer">
+    <footer className="navbar-footer fixed-bottom">
       <div className="container">
         <span className="navbar-footer__copyright">Todos los derechos reservados - nosjuimos.com. Un producto del Sofá Rojo S.A.</span>
 

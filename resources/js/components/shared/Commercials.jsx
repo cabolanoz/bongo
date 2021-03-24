@@ -26,7 +26,7 @@ const CarouselItem = ({
     <div className={cssClassName}>
       <a href={pictureUrl} target="_blank">
         <img
-          className="img-fluid"
+          className="img-fluid d-inline-block w-100"
           src={isDesktop ? desktopPicture : mobilePicture}
           alt="Ad"
         />

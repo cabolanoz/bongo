@@ -3,7 +3,6 @@ import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import Gallery from "react-photo-gallery";
 // import Carousel, { Modal, ModalGateway } from "react-images";
-import { Loader } from '../shared';
 import { fetchAlbum } from '../../actions';
 import { Routes } from '../../const';
 import { getRandomAspectRatio } from '../../utils/helpers';
@@ -36,8 +35,6 @@ const Show = () => {
   //   setViewerIsOpen(false);
   // };
 
-  if (!album) return <Loader />;
-
   const { name, description, photosQuantity, photos = [] } = album;
 
   const formattedPhotos = photos.map(({ desktopAsset }) => (
@@ -45,7 +42,7 @@ const Show = () => {
   ));
 
   return (
-    <main className="album-show my-5">
+    <main className="album-show my-3">
       <div className="container">
         <div className="row">
           <div className="col-md-12">
@@ -74,7 +71,7 @@ const Show = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-2 col-2 offset-md-5 my-5">
+          <div className="col-md-2 col-3 offset-md-5 offset-5 mt-3">
             <Link className="btn btn-dark btn-block text-uppercase" to={Routes.weGoodLookings()}>VER MÁS</Link>
           </div>
         </div>

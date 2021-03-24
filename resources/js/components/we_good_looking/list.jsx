@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Loader } from '../shared';
 import { fetchAlbums } from '../../actions';
 import { Routes } from '../../const';
 
@@ -37,10 +36,8 @@ const List = () => {
     fetchAlbums(onFetchAlbums);
   }, []);
 
-  if (!albums) return <Loader />;
-
   return (
-    <main className="album-list my-5">
+    <main className="album-list mt-3">
       <div className="container">
         <div className="row">
           {albums.map(album => <AlbumCard key={album.id} {...album} />)}

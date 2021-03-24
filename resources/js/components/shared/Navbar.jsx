@@ -22,13 +22,13 @@ const Navbar = () => {
   // });
 
   return (
-    <header className="navbar__header">
-      <div className="container">
+    <header className="navbar__header fixed-top">
+      <div className="container px-0">
         <nav className="navbar navbar-expand-lg navbar-dark">
           <Link className="navbar-brand" to={Routes.root()}>
             <img className="img-fluid" src="/images/logo.png" alt="Logo" />
           </Link>
-          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <button className="navbar-toggler pr-0" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
 
@@ -46,7 +46,7 @@ const Navbar = () => {
               <button className="btn btn-custom navbar-nav__item my-2 my-sm-0">REGISTRÁTE</button>
               <button className="btn btn-link navbar-nav__item">SUSCRIBÍTE</button>
               <a
-                className="navbar-nav__item"
+                className="navbar-nav__item pr-0"
                 href="http://nosjuimos.com/conecta"
                 target="_blank"
               >
