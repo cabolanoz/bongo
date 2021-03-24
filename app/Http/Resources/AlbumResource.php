@@ -22,6 +22,7 @@ class AlbumResource extends JsonResource
             'spectacle_thumbnail' => $this->spectacle_thumbnail,
             'spectacle_date' => $this->spectacle_date,
             'published' => $this->published,
+            'photos' => $this->photos,
             'photos_quantity' => $this->photos_quantity(),
         ];
     }

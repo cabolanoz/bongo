@@ -16,5 +16,7 @@ use App\Http\Controllers\WelcomeController;
 */
 
 Route::get('/', [WelcomeController::class, 'index']);
-Route::get('/salimos-tuani', [WelcomeController::class, 'index']);
-Route::get('/salimos-tuani/{album:slug}', [WelcomeController::class, 'index']);
+Route::prefix('salimos-tuani')->group(function() {
+    Route::get('/', [WelcomeController::class, 'index']);
+    Route::get('/{slug}', [WelcomeController::class, 'show'])->where('slug', '[0-9a-z-_]+');
+});

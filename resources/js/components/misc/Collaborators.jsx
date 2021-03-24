@@ -54,11 +54,19 @@ const CollaboratorThumbnail = ({ logo, siteUrl, collaborator }) => {
 const Collaborators = () => (
   <div className="collaborators">
     <div className="container">
-      <h1 className="collaborators__title mb-5">NUESTROS COLABORADORES</h1>
+      <div className="row">
+        <div className="col-md-12">
+          <h1 className="collaborators__title text-center mb-5">NUESTROS COLABORADORES</h1>
+        </div>
+      </div>
       <div className="row">
         {COLLABORATORS.map(collaborator => <CollaboratorThumbnail key={collaborator.logo} {...collaborator} collaborator />)}
       </div>
-      <h1 className="collaborators__title my-5">NUESTROS ALIADOS</h1>
+      <div className="row">
+        <div className="col-md-12">
+          <h1 className="collaborators__title text-center my-5">NUESTROS ALIADOS</h1>
+        </div>
+      </div>
       <div className="row">
         {ALLIES.map(ally => <CollaboratorThumbnail key={ally.logo} {...ally} />)}
       </div>

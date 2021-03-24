@@ -1,6 +1,6 @@
 @use '../../sass/app.scss' as *;
 
-.footer {
+footer.navbar-footer {
   background-color: $black;
   font-family:      'Source Sans Pro';
   font-size:        0.8em;
@@ -13,7 +13,7 @@
     text-align: inherit;
   }
 
-  &__copyright {
+  .navbar-footer__copyright { // TODO: WTF, it's not accepting BEM
     color:   $footer-text-color;
     display: inline-block;
     padding: 1em 0;
@@ -26,7 +26,7 @@
       display:        inline-block;
     }
 
-    &__item {
+    &__item { // TODO: Items are not well alligned, specially the SR logo
       color:           $footer-text-color;
       text-transform:  uppercase;
       text-decoration: none;

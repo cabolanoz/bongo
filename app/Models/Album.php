@@ -37,6 +37,17 @@ class Album extends Model
     }
 
     /**
+     * Scope a query to only include published albums.
+     *
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopePublished($query)
+    {
+        return $query->where('published', 1)->get();
+    }
+
+    /**
      * Get the route key for the model.
      *
      * @return string

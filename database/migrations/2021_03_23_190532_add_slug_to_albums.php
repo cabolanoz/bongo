@@ -15,7 +15,7 @@ class AddSlugToAlbums extends Migration
     {
         Schema::table('albums', function (Blueprint $table) {
             $table->after('name', function($table) {
-                $table->string('slug')->nullable();
+                $table->string('slug')->unique()->nullable();
             });
         });
     }

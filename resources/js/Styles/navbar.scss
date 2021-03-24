@@ -1,6 +1,6 @@
 @use '../../sass/app.scss' as *;
 
-.navigationbar {
+header.navbar__header {
   background-color: $black;
   font-size:        $font-size-base;
 
@@ -10,7 +10,7 @@
       outline: none;
     }
 
-    .navbar-collapse {
+    .navbar-collapse { // TODO: Investigate how to add margin when collapsing menu is enabled
         // &.show {
         //     .navbar-nav {
         //         &__item {
@@ -30,7 +30,7 @@
             text-decoration: none;
 
             &--active {
-              @extend .navbar-nav__item;
+              @extend .navbar-nav__item; // TODO: WTF, this should inherit __item style from BEM notation
 
               color: $white;
             }

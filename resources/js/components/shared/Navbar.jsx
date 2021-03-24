@@ -22,7 +22,7 @@ const Navbar = () => {
   // });
 
   return (
-    <div className="navigationbar">
+    <header className="navbar__header">
       <div className="container">
         <nav className="navbar navbar-expand-lg navbar-dark">
           <Link className="navbar-brand" to={Routes.root()}>
@@ -56,7 +56,7 @@ const Navbar = () => {
           </div>
         </nav>
       </div>
-    </div>
+    </header>
   );
 };
 

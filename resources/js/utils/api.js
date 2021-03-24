@@ -73,6 +73,10 @@ class Api {
     return this.get('albums');
   }
 
+  async getAlbum(slug) {
+    return this.get(`albums/${slug}`);
+  }
+
   async getCommercials() {
     return this.get('commercials');
   }

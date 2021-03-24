@@ -1,6 +1,6 @@
 @use '../../sass/app.scss' as *;
 
-.album-list {
+main.album-list {
   .card-link {
     text-decoration: none;
   }
@@ -9,6 +9,12 @@
     border-radius: 0;
     border:        none;
 
+    &:hover {
+      .card-img-top__overlay {
+        opacity: 0.9;
+      }
+    }
+
     .card-img-top {
       border-radius: 0;
       position:      relative;
@@ -16,10 +22,6 @@
 
       &__overlay {
         height: 100%;
-
-        &:hover {
-          opacity: 0.9;
-        }
   
         &::before {
           content: '';
@@ -46,6 +48,9 @@
         font-family:    'Oswald';
         text-transform: uppercase;
         color:          $black;
+        white-space:    nowrap;
+        text-overflow:  ellipsis;
+        overflow:       hidden;
       }
 
       .card-text {

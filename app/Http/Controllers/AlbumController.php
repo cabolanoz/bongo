@@ -17,7 +17,7 @@ class AlbumController extends Controller
      */
     public function index()
     {
-        return new AlbumCollection(Album::all());
+        return new AlbumCollection(Album::published());
     }
 
     /**
@@ -34,12 +34,12 @@ class AlbumController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($slug)
     {
-        return new AlbumResource(Album::find($id));
+        return new AlbumResource(Album::published()->where('slug', $slug)->first());
     }
 
     /**

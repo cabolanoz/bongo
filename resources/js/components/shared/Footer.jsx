@@ -13,9 +13,9 @@ const Footer = () => {
   const onCollaboratorsButtonClick = () => showCollaboratorsModal(dispatch);
 
   return (
-    <footer className="footer">
+    <footer className="navbar-footer">
       <div className="container">
-        <span className="footer__copyright">Todos los derechos reservados - nosjuimos.com. Un producto del Sofá Rojo S.A.</span>
+        <span className="navbar-footer__copyright">Todos los derechos reservados - nosjuimos.com. Un producto del Sofá Rojo S.A.</span>
 
         <ul className="navbar-nav ml-auto">
           <a className="navbar-nav__item" onClick={onTermsButtonClick}>TÉRMINOS Y USOS</a>
