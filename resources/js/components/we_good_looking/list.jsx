@@ -1,27 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Card } from 'react-bootstrap';
 import { fetchAlbums } from '../../actions';
 import { Routes } from '../../const';
 
 import '../../styles/_album_list.scss';
-
-const AlbumCard = ({ name, slug, spectacleThumbnail, photosQuantity }) => (
-  <div className="col-md-3 col-sm-4 col-6 mb-3">
-    <Link className="card-link" to={Routes.weGoodLooking({ slug })}>
-      <div className="card">
-        <div className="card-img-top">
-          <div className="card-img-top__overlay">
-            <img src={spectacleThumbnail} alt={`Albúm ${name}`} className="img-fluid"/>
-          </div>
-        </div>
-        <div className="card-body">
-          <h5 className="card-title text-center">{name}</h5>
-          <p className="card-text text-center">{`${photosQuantity} Fotografías`}</p>
-        </div>
-      </div>
-    </Link>
-  </div>
-);
 
 const List = () => {
   const [albums, setAlbums] = useState([]);
@@ -40,7 +23,23 @@ const List = () => {
     <main className="album-list mt-3">
       <div className="container">
         <div className="row">
-          {albums.map(album => <AlbumCard key={album.id} {...album} />)}
+          {
+            albums.map(({ id, name, slug, spectacleThumbnail, photosQuantity }) => (
+              <div className="col-md-3 col-sm-4 col-6 mb-3" key={id}>
+                <Link className="card-link" to={Routes.weGoodLooking({ slug })}>
+                  <Card >
+                    <div className="card-img-top-overlay">
+                      <Card.Img variant="top" src={spectacleThumbnail} />
+                    </div>
+                    <Card.Body>
+                      <Card.Title className="text-center">{name}</Card.Title>
+                      <Card.Text className="text-center">{`${photosQuantity} Fotografías`}</Card.Text>
+                    </Card.Body>
+                  </Card>
+                </Link>
+              </div>
+            ))
+          }
         </div>
       </div>
     </main>

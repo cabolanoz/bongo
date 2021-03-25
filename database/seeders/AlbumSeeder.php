@@ -27,7 +27,7 @@ class AlbumSeeder extends Seeder
             $album = Album::create([
                 'name' => $faker->name,
                 'description' => $faker->text,
-                'spectacle_thumbnail' => 'https://source.unsplash.com/random/400x300',
+                'spectacle_thumbnail' => 'https://source.unsplash.com/random/400x300?sig=' . $i,
                 'spectacle_date' => \Carbon\Carbon::now(),
                 'published' => true,
                 'created_by' => 1
@@ -36,8 +36,8 @@ class AlbumSeeder extends Seeder
             for ($j = 0; $j < 10; $j++)
             {
                 Photo::create([
-                    'desktop_asset' => 'https://source.unsplash.com/random/1280x800',
-                    'mobile_asset' => 'https://source.unsplash.com/random/400x300',
+                    'desktop_asset' => 'https://source.unsplash.com/random/1280x800?sig=' . $j,
+                    'mobile_asset' => 'https://source.unsplash.com/random/400x300?sig=' . $j,
                     'album_id' => $album->id,
                     'created_by' => 1,
                 ]);

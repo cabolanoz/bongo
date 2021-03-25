@@ -24,8 +24,8 @@ class CommercialSeeder extends Seeder
         {
             Commercial::create([
                 'name' => $faker->name,
-                'desktop_picture' => 'https://source.unsplash.com/random/1280x130',
-                'mobile_picture' => 'https://source.unsplash.com/random/600x200',
+                'desktop_picture' => 'https://source.unsplash.com/random/1280x130?sig=' . $i,
+                'mobile_picture' => 'https://source.unsplash.com/random/600x200?sig=' . $i,
                 'picture_url' => $faker->url,
                 'start_date' => \Carbon\Carbon::now()->subDays(30),
                 'end_date' => null,

@@ -23,7 +23,7 @@ class Album extends Model
         'published',
     ];
 
-     /**
+    /**
      * The "booted" method of the model.
      *
      * @return void

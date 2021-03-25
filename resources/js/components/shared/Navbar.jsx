@@ -1,60 +1,56 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Button, Image } from 'react-bootstrap';
 import { showLoginModal } from '../../actions';
 import useAppState from '../../hooks/useAppState';
 import { Routes } from '../../const';
 
 import '../../styles/_navbar.scss';
 
+// TODO: Fix active navigation item
 const Navbar = () => {
   const [, dispatch] = useAppState();
 
-  // const isEnjoyableNavActive = () => useRouteMatch(Routes.root());
-  // const enjoyableClassName = classNames({
-  //   'navbar-nav__item': !isEnjoyableNavActive,
-  //   'navbar-nav__item--active': isEnjoyableNavActive
-  // });
-
-  // const isWeGoodLookingNavActive = () => useRouteMatch(Routes.weGoodLooking());
-  // const weGoodLookingClassName = classNames({
-  //   'navbar-nav__item': !isWeGoodLookingNavActive,
-  //   'navbar-nav__item--active': isWeGoodLookingNavActive
-  // });
+  const onShowLoginModal = () => showLoginModal(dispatch);
 
   return (
     <header className="navbar__header fixed-top">
-      <div className="container px-0">
-        <nav className="navbar navbar-expand-lg navbar-dark">
-          <Link className="navbar-brand" to={Routes.root()}>
-            <img className="img-fluid" src="/images/logo.png" alt="Logo" />
-          </Link>
-          <button className="navbar-toggler pr-0" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-          </button>
+      <div className="container">
+        <div className="row">
+          <div className="col-md-12">
+            <nav className="navbar navbar-expand-lg navbar-dark px-0">
+              <Link className="navbar-brand" to={Routes.root()}>
+                <Image src="/images/logo.png" fluid alt="&iexcl;Nos Juimos&#33; Logo" />
+              </Link>
+              <button className="navbar-toggler pr-0" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+              </button>
 
-          <div className="collapse navbar-collapse" id="navbar">
-            {/* Left | Normal navigation */}
-            <ul className="navbar-nav">
-              <Link className="navbar-nav__item" to={Routes.root()}>JUÍMONOS</Link>
-              <Link className="navbar-nav__item" to={Routes.root()}>TULA CUECHO</Link>
-              <Link className="navbar-nav__item" to={Routes.weGoodLookings()}>SALIMOS TUANI</Link>
-            </ul>
+              <div className="collapse navbar-collapse" id="navbar">
+                {/* Left | Normal navigation */}
+                <ul className="navbar-nav">
+                  <Link className="navbar-nav__item" to={Routes.root()}>JUÍMONOS</Link>
+                  <Link className="navbar-nav__item" to={Routes.root()}>TULA CUECHO</Link>
+                  <Link className="navbar-nav__item" to={Routes.weGoodLookings()}>SALIMOS TUANI</Link>
+                </ul>
 
-            {/* Right navigation */}
-            <ul className="navbar-nav ml-auto">
-              <button className="btn btn-link navbar-nav__item" onClick={() => showLoginModal(dispatch)}>INICIA SESIÓN</button>
-              <button className="btn btn-custom navbar-nav__item my-2 my-sm-0">REGISTRÁTE</button>
-              <button className="btn btn-link navbar-nav__item">SUSCRIBÍTE</button>
-              <a
-                className="navbar-nav__item pr-0"
-                href="http://nosjuimos.com/conecta"
-                target="_blank"
-              >
-                ANÚNCIATE
-              </a>
-            </ul>
+                {/* Right navigation */}
+                <ul className="navbar-nav ml-auto">
+                  <Button className="navbar-nav__item" onClick={onShowLoginModal} variant="link">INICIA SESIÓN</Button>
+                  <Button className="btn-custom navbar-nav__item my-2 my-sm-0">REGISTRÁTE</Button>
+                  <Button className="navbar-nav__item" variant="link">SUSCRIBÍTE</Button>
+                  <a
+                    className="navbar-nav__item pr-0"
+                    href="http://nosjuimos.com/conecta"
+                    target="_blank"
+                  >
+                    ANÚNCIATE
+                  </a>
+                </ul>
+              </div>
+            </nav>
           </div>
-        </nav>
+        </div>
       </div>
     </header>
   );

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\SpectacleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,14 @@ use App\Http\Controllers\WelcomeController;
 */
 
 Route::get('/', [WelcomeController::class, 'index']);
+Route::prefix('juimonos')->group(function() {
+    Route::get('/', [WelcomeController::class, 'index']);
+    Route::get('/{slug}', [SpectacleController::class, 'promenade'])->where('slug', '[0-9a-z-_]+');
+});
+Route::prefix('tula-cuecho')->group(function() {
+    Route::get('/', [WelcomeController::class, 'index']);
+    Route::get('/{slug}', [SpectacleController::class, 'chitchat'])->where('slug', '[0-9a-z-_]+');
+});
 Route::prefix('salimos-tuani')->group(function() {
     Route::get('/', [WelcomeController::class, 'index']);
     Route::get('/{slug}', [WelcomeController::class, 'show'])->where('slug', '[0-9a-z-_]+');

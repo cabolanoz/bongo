@@ -1,19 +1,16 @@
-import React, { useCallback, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import Gallery from "react-photo-gallery";
-// import Carousel, { Modal, ModalGateway } from "react-images";
 import { fetchAlbum } from '../../actions';
 import { Routes } from '../../const';
 import { getRandomAspectRatio } from '../../utils/helpers';
 
 import '../../styles/_album_show.scss';
 
-const Show = () => {
+const Show = () => { // TODO: Investigate (or create lazy component) for loading images in the gallery
   const { slug } = useParams();
   const [album, setAlbum] = useState({});
-  // const [currentImage, setCurrentImage] = useState(0);
-  // const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
   const onFetchAlbum = ({ data, error }) => {
     if (error) console.error('There was an error while trying to fetch albums.');
@@ -24,16 +21,6 @@ const Show = () => {
   useEffect(() => {
     fetchAlbum(onFetchAlbum, slug);
   }, []);
-
-  // const openLightbox = useCallback((event, { photo, index }) => {
-  //   setCurrentImage(index);
-  //   setViewerIsOpen(true);
-  // }, []);
-
-  // const closeLightbox = () => {
-  //   setCurrentImage(0);
-  //   setViewerIsOpen(false);
-  // };
 
   const { name, description, photosQuantity, photos = [] } = album;
 
@@ -54,24 +41,10 @@ const Show = () => {
         <div className="row">
           <div className="col-md-12 mt-2">
             <Gallery photos={formattedPhotos} />
-            {/* <ModalGateway>
-              {viewerIsOpen ? (
-                <Modal onClose={closeLightbox}>
-                  <Carousel
-                    currentIndex={currentImage}
-                    views={formattedPhotos.map(x => ({
-                      ...x,
-                      srcset: x.srcSet,
-                      caption: x.title
-                    }))}
-                  />
-                </Modal>
-              ) : null}
-            </ModalGateway> */}
           </div>
         </div>
         <div className="row">
-          <div className="col-md-2 col-3 offset-md-5 offset-5 mt-3">
+          <div className="col-md-2 col-3 offset-md-5 offset-5 my-3">
             <Link className="btn btn-dark btn-block text-uppercase" to={Routes.weGoodLookings()}>VER MÁS</Link>
           </div>
         </div>

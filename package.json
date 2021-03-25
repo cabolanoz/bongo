@@ -29,6 +29,7 @@
         "humps": "^2.0.1",
         "prop-types": "^15.7.2",
         "react": "^16.2.0",
+        "react-bootstrap": "^1.5.2",
         "react-dom": "^16.2.0",
         "react-images": "1.0.0",
         "react-photo-gallery": "^8.0.0",
