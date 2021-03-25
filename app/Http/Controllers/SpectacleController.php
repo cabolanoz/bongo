@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Http\Resources\SpectacleCollection;
+use App\Http\Resources\SpectacleResource;
 use App\Models\Spectacle;
 
 class SpectacleController extends Controller
@@ -13,9 +15,11 @@ class SpectacleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return new SpectacleCollection(Spectacle::published());
+        $type = $request->query('type');
+        $spectacles = Spectacle::where('type', $type)->published()->take(15);
+        return new SpectacleCollection($spectacles);
     }
 
     /**
@@ -35,9 +39,11 @@ class SpectacleController extends Controller
      * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show(Request $request, $slug)
     {
-        return new SpectacleResource(Spectacle::published()->where('slug', $slug)->first());
+        $type = $request->query('type');
+        $spectacle = Spectacle::where('type', $type)->where('slug', $slug)->published()->first();
+        return new SpectacleResource($spectacle);
     }
 
     /**
@@ -71,7 +77,7 @@ class SpectacleController extends Controller
      */
     public function promenade($slug)
     {
-        $spectacle = Spectacle::published()->promenade()->where('slug', $slug)->first();
+        $spectacle = Spectacle::where('type', 'promenade')->where('slug', $slug)->published()->first();
 
         if ($spectacle)
         {
@@ -91,7 +97,7 @@ class SpectacleController extends Controller
      */
     public function chitchat($slug)
     {
-        $spectacle = Spectacle::published()->chitchat()->where('slug', $slug)->first();
+        $spectacle = Spectacle::where('type', 'chitchat')->where('slug', $slug)->published()->first();
 
         if ($spectacle)
         {

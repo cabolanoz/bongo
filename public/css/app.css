@@ -10022,12 +10022,14 @@ body {
   min-height: 100%;
   position: relative;
 }
+#app main.promenade,
 #app main.album-list,
 #app main.album-show {
   padding-bottom: 12em;
 }
 @media (min-width: 992px) {
-  #app main.album-list,
+  #app main.promenade,
+#app main.album-list,
 #app main.album-show {
     padding-bottom: 3em;
   }

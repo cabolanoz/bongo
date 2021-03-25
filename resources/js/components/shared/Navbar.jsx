@@ -29,8 +29,8 @@ const Navbar = () => {
               <div className="collapse navbar-collapse" id="navbar">
                 {/* Left | Normal navigation */}
                 <ul className="navbar-nav">
-                  <Link className="navbar-nav__item" to={Routes.root()}>JUÍMONOS</Link>
-                  <Link className="navbar-nav__item" to={Routes.root()}>TULA CUECHO</Link>
+                  <Link className="navbar-nav__item" to={Routes.promenades()}>JUÍMONOS</Link>
+                  <Link className="navbar-nav__item" to={Routes.chitchats()}>TULA CUECHO</Link>
                   <Link className="navbar-nav__item" to={Routes.weGoodLookings()}>SALIMOS TUANI</Link>
                 </ul>
 

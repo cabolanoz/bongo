@@ -40,7 +40,7 @@ const Show = () => { // TODO: Investigate (or create lazy component) for loading
         </div>
         <div className="row">
           <div className="col-md-12 mt-2">
-            <Gallery photos={formattedPhotos} />
+            <Gallery photos={formattedPhotos} onClick={(event, { photo, index}) => console.log(event, photo, index)} />
           </div>
         </div>
         <div className="row">

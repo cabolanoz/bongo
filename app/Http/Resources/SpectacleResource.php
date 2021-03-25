@@ -16,7 +16,7 @@ class SpectacleResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'title' => $this->name,
+            'title' => $this->title,
             'slug' => $this->slug,
             'description' => $this->description,
             'author' => $this->author,
@@ -26,6 +26,7 @@ class SpectacleResource extends JsonResource
             'end_date' => $this->end_date,
             'type' => $this->type,
             'published' => $this->published,
+            'category' => $this->category,
         ];
     }
 }

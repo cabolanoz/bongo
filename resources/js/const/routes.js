@@ -12,11 +12,28 @@ const parameterisedRoute = (pattern = '', params = {}) => {
 /* Routes */
 export const Routes = {
   root: () => '/',
+  promenades: () => '/juimonos',
+  promenade: (params = {}) => parameterisedRoute('/juimonos/:slug([0-9a-z-_]+)', params),
+  chitchats: () => '/tula-cuecho',
+  chitchat: (params = {}) => parameterisedRoute('/tula-cuecho/:slug([0-9a-z-_]+)', params),
   weGoodLookings: () => '/salimos-tuani',
   weGoodLooking: (params = {}) => parameterisedRoute('/salimos-tuani/:slug([0-9a-z-_]+)', params),
   terms: () => '/terminos-y-usos',
   collaborators: () => '/colaboradores',
 };
+
+/* Promenade routes */
+export const PROMENADE_ROUTES = [
+  Routes.root(),
+  Routes.promenades(),
+  Routes.promenade(),
+];
+
+/* Chitchat routes */
+export const CHITCHAT_ROUTES = [
+  Routes.chitchats(),
+  Routes.chitchat(),
+];
 
 /* We good looking routes */
 export const WE_GOOD_LOOKING_ROUTES = [

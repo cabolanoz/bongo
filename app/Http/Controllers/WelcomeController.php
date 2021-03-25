@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Album;
-
 class WelcomeController extends Controller
 {
     /**
@@ -16,25 +14,5 @@ class WelcomeController extends Controller
     public function index()
     {
         return view('welcome');
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  string  $slug
-     * @return \Illuminate\Http\Response
-     */
-    public function show($slug)
-    {
-        $album = Album::where('slug', $slug)->first();
-
-        if ($album)
-        {
-            return view('welcome');
-        }
-        else
-        {
-            return abort(404);
-        }
     }
 }

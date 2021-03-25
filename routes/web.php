@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\SpectacleController;
+use App\Http\Controllers\AlbumController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +28,7 @@ Route::prefix('tula-cuecho')->group(function() {
 });
 Route::prefix('salimos-tuani')->group(function() {
     Route::get('/', [WelcomeController::class, 'index']);
-    Route::get('/{slug}', [WelcomeController::class, 'show'])->where('slug', '[0-9a-z-_]+');
+    Route::get('/{slug}', [AlbumController::class, 'album'])->where('slug', '[0-9a-z-_]+');
 });
 
 Route::get('/terminos-y-usos', [WelcomeController::class, 'index']);

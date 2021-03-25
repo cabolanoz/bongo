@@ -25,8 +25,8 @@ class SpectacleSeeder extends Seeder
         for ($i = 0; $i < 100; $i++)
         {
             Spectacle::create([
-                'title' => $faker->sentence($nbWords = rand(6, 15), $variableNbWords = true),
-                'description' => $faker->randomHtml(2, 3),
+                'title' => $faker->name,
+                'description' => $faker->realText($maxNbChars = rand(200, 400), $indexSize = 2),
                 'author' => $faker->name,
                 'desktop_asset' => 'https://source.unsplash.com/random/1280x800?sig=' . $i,
                 'mobile_asset' => 'https://source.unsplash.com/random/400x300?sig=' . $i,

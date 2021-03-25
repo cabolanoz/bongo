@@ -64,4 +64,24 @@ class AlbumController extends Controller
     {
         //
     }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  string  $slug
+     * @return \Illuminate\Http\Response
+     */
+    public function album($slug)
+    {
+        $album = Album::where('slug', $slug)->first();
+
+        if ($album)
+        {
+            return view('welcome');
+        }
+        else
+        {
+            return abort(404);
+        }
+    }
 }

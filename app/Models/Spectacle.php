@@ -55,28 +55,6 @@ class Spectacle extends Model
     }
 
     /**
-     * Scope a query to only include promenade spectacles.
-     *
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public function scopePromenade($query)
-    {
-        return $query->where('type', 'promenade')->get();
-    }
-
-    /**
-     * Scope a query to only include chitchat spectacles.
-     *
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public function scopeChitchat($query)
-    {
-        return $query->where('type', 'chitchat')->get();
-    }
-
-    /**
      * Get the route key for the model.
      *
      * @return string
@@ -91,6 +69,6 @@ class Spectacle extends Model
      */
     public function category()
     {
-        return $this->hasOne(Category::class);
+        return $this->belongsTo(Category::class);
     }
 }

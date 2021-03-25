@@ -24,27 +24,25 @@ const Commercials = () => {
   });
 
   return (
-    <div className="commercials bg-white my-3">
-      <Carousel controls={false}>
-        {
-          commercials.map(({ id, name, desktopPicture, mobilePicture, pictureUrl }) => {
-            const source = isDesktop ? desktopPicture : mobilePicture;
+    <Carousel className="commercials" controls={false}>
+      {
+        commercials.map(({ id, name, desktopPicture, mobilePicture, pictureUrl }) => {
+          const source = isDesktop ? desktopPicture : mobilePicture;
 
-            return (
-              <Carousel.Item key={id} interval={3000}>
-                <a href={pictureUrl} target="_blank">
-                  <img
-                    className="img-fluid d-inline-block w-100"
-                    src={source}
-                    alt={`AD ${name}`}
-                  />
-                </a>
-              </Carousel.Item>
-            );
-          })
-        }
-      </Carousel>
-    </div>
+          return (
+            <Carousel.Item key={id} interval={3000}>
+              <a href={pictureUrl} target="_blank">
+                <img
+                  className="img-fluid d-inline-block w-100"
+                  src={source}
+                  alt={`AD ${name}`}
+                />
+              </a>
+            </Carousel.Item>
+          );
+        })
+      }
+    </Carousel>
   );
 };
 

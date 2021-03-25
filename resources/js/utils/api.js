@@ -69,6 +69,14 @@ class Api {
    * API methods.
    */
 
+  async getSpectacles(params) {
+    return this.get('/spectacles', params);
+  }
+
+  async getSpectacle(slug, params) {
+    return this.get(`/spectacles/${slug}`, params);
+  }
+
   async getAlbums() {
     return this.get('albums');
   }

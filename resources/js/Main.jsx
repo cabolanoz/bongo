@@ -2,11 +2,14 @@ import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import {
   Routes,
+  PROMENADE_ROUTES,
+  CHITCHAT_ROUTES,
   WE_GOOD_LOOKING_ROUTES,
   EXTRA_ROUTES,
 } from './const';
 import { Navbar, Footer, StickySocial } from './components/shared';
-import Enjoyable from './components/enjoyable';
+import Promenade from './components/promenade';
+import Chitchat from './components/chitchat';
 import WeGoodLooking from './components/we_good_looking';
 import Extra from './components/extra';
 import { ScrollToTop } from './utils';
@@ -18,7 +21,8 @@ const Main = initialState => (
   <StateProvider initialState={initialState} reducer={reducer}>
     <Navbar />
     <Switch>
-      <Route path={Routes.root()} exact component={Enjoyable} />
+      <Route path={PROMENADE_ROUTES} exact component={Promenade} />
+      <Route path={CHITCHAT_ROUTES} exact component={Chitchat} />
       <Route path={WE_GOOD_LOOKING_ROUTES} exact component={WeGoodLooking} />
       <Route path={EXTRA_ROUTES} exact component={Extra} />
       <Redirect to={Routes.root()} />
