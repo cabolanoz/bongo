@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Image } from 'react-bootstrap';
+import { SearchIcon } from '@primer/octicons-react';
 import { showLoginModal } from '../../actions';
 import useAppState from '../../hooks/useAppState';
 import { Routes } from '../../const';
@@ -36,6 +37,9 @@ const Navbar = () => {
 
                 {/* Right navigation */}
                 <ul className="navbar-nav ml-auto">
+                  <a className="d-none d-lg-block navbar-nav__item">
+                    <SearchIcon size="small" />
+                  </a>
                   <Button className="navbar-nav__item" onClick={onShowLoginModal} variant="link">INICIA SESIÓN</Button>
                   <Button className="btn-custom navbar-nav__item my-2 my-sm-0">REGISTRÁTE</Button>
                   <Button className="navbar-nav__item" variant="link">SUSCRIBÍTE</Button>

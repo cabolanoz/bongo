@@ -1,6 +1,6 @@
 import React from 'react';
 import ScrollUp from 'react-scroll-up';
-import { ChevronUpIcon } from '@primer/octicons-react'
+import { ChevronUpIcon } from '@primer/octicons-react';
 
 const ScrollToTop = () => {
   const customStyle = {

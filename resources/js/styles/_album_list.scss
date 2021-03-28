@@ -21,7 +21,7 @@ main.album-list {
       height:        $card-img-top-height;
 
       &::before {
-        content: '';
+        content:    '';
         background: rgba(0, 0, 0, 0.5);
         height:     100%;
         left:       0;

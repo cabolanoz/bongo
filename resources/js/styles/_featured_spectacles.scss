@@ -1,0 +1,178 @@
+@use '../../sass/app.scss' as *;
+
+.featured-spectacles {
+  display:         flex;
+  position:        relative;
+  width:           100%;
+  align-items:     center;
+  justify-content: center;
+
+  button {
+    position:   absolute;
+    border:     none;
+    background: none;
+
+    @include media-breakpoint-down(md) {
+      display: none;
+    }
+
+    &:first-child {
+      left: -76px;
+    }
+
+    &:last-child {
+      right: -76px;
+    }
+
+    &:hover {
+      opacity: 0.4;
+    }
+  }
+
+  &__content {
+    flex-grow: 1 !important;
+    position:  relative;
+  }
+
+  &__carousel-item {
+    display:  flex;
+    position: relative;
+  }
+
+  &__item {
+    display:  flex;
+    position: relative;
+
+    &:last-child {
+      display: none;
+    }
+
+    @include media-breakpoint-up(lg) {
+      width: 50%;
+
+      &:first-child {
+        border-right: 1px solid $white;
+      }
+
+      &:last-child {
+        display:     inherit;
+        flex-wrap:   wrap;
+        border-left: 1px solid $white;
+
+        > a {
+          width: 50%;
+
+          &:nth-child(1) {
+            border-right: 1px solid $white;
+            border-bottom: 1px solid $white;
+          }
+
+          &:nth-child(2) {
+            border-bottom: 1px solid $white;
+            border-left:   1px solid $white;
+          }
+
+          &:nth-child(3) {
+            border-top:   1px solid $white;
+            border-right: 1px solid $white;
+          }
+
+          &:nth-child(4) {
+            border-top:  1px solid $white;
+            border-left: 1px solid $white;
+          }
+        }
+      }
+    }
+  }
+
+  &__figure {
+    position: relative;
+    overflow: hidden;
+
+    &:hover {
+      opacity: 0.9;
+
+      &::before {
+        opacity:           1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform:         translate3d(0, 0, 0);
+      }
+
+      .featured-spectacles__title {
+        transform: translate3d(0, -50%, 0) translate3d(0, -40px, 0);
+      }
+
+      .featured-spectacles__desc {
+        opacity:           1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform:         translate3d(0,0,0);
+      }
+    }
+
+    &::before {
+      content:            '';
+      background:       rgba(0, 0, 0, 0.5);
+      position:           absolute;
+      width:              100%;
+      height:             100%;
+      -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+      transition:         opacity 0.35s, transform 0.35s;
+    }
+  }
+
+  &__caption {
+    position: absolute;
+    top:      0;
+    left:     0;
+    width:    100%;
+    height:   100%;
+
+    &::before {
+      content:           '';
+      position:          absolute;
+      top:               0;
+      left:              0;
+      width:             100%;
+      height:            100%;
+      -webkit-transform: translate3d(0, 50%, 0);
+      transform:         translate3d(0, 50%, 0);
+      pointer-events:    none;
+    }
+  }
+
+  &__title {
+    position:           absolute;
+    top:                90%;
+    left:               0;
+    width:              100%;
+    color:              $white;
+    white-space:        nowrap;
+    text-overflow:      ellipsis;
+    overflow:           hidden;
+    font-family:        "Oswald";
+    font-size:          1.2em;
+    -webkit-transform:  translate3d(0, -90%, 0);
+    transform:          translate3d(0, -90%, 0);
+    -webkit-transition: -webkit-transform 0.35s, color 0.35s;
+    transition:         transform 0.35s, color 0.35s;
+  }
+
+  &__desc {
+    position:           absolute;
+    bottom:             0;
+    left:               0;
+    width:              100%;
+    color:              $white;
+    white-space:        nowrap;
+    text-overflow:      ellipsis;
+    overflow:           hidden;
+    font-family:        "Source Sans Pro";
+    font-size:          0.8em;
+    opacity:            0;
+    -webkit-transform:  translate3d(0, 10px, 0);
+    transform:          translate3d(0, 10px, 0);
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition:         opacity 0.35s, transform 0.35s;
+  }
+}

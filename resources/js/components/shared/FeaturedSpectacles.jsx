@@ -1,39 +1,46 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Carousel } from 'react-bootstrap';
+import FeaturedSpectaclesCarousel from './featured_spectacles_carousel';
 import { Routes } from '../../const';
+import { reduceFeaturedSpectacles } from '../../utils'
 
-const FeaturedSpectacles = ({ fetchAction }) => {
-  const [spectacles, setSpectacles] = useState([]);
+import '../../styles/_featured_spectacles.scss';
 
-  const onFetchSpectacles = ({ data, error }) => {
-    if (error) console.error('There was an error while trying to fetch spectacles.');
-
-    setSpectacles(data);
-  };
-
-  useEffect(() => {
-    fetchAction(onFetchSpectacles);
-  }, []);
+const FeaturedSpectacles = ({ spectacles }) => {
+  const spectaclesGroup = reduceFeaturedSpectacles(spectacles);
 
   return (
-    <Carousel indicators={false} slide={false}>
-      {spectacles.map(({ id, title, slug, description, desktopAsset }) => (
-        <Carousel.Item key={id}>
-          <Link to={Routes.promenade({ slug })}>
-            <img
-              className="d-inline-block img-fluid w-100"
-              src={desktopAsset}
-              alt={`Evento - ${title}`}
-            />
-          </Link>
-          <Carousel.Caption>
-            <h3>{title}</h3>
-            <p>{description}</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-      ))}
-    </Carousel>
+    <FeaturedSpectaclesCarousel key={spectaclesGroup.length}>
+      {spectaclesGroup.map((spectacles) => {
+        const { id, title, slug, description, desktopAsset } = spectacles[0];
+        const otherSpectacles = spectacles.slice(1);
+
+        return (
+          <div className="featured-spectacles__carousel-item" key={id}>
+            <div className="featured-spectacles__item">
+              <Link className="featured-spectacles__figure" to={Routes.promenade({ slug })}>
+                <img className="d-inline-block img-fluid w-100" src={desktopAsset} alt={`Evento ${title}`} />
+                <div className="featured-spectacles__caption">
+                  <h3 className="featured-spectacles__title px-3">{title}</h3>
+                  <p className="featured-spectacles__desc px-3">{description}</p>
+                </div>
+              </Link>
+            </div>
+            <div className="featured-spectacles__item">
+              {otherSpectacles.map(({ id, title, slug, description, desktopAsset }) => (
+                  <Link className="featured-spectacles__figure" key={id} to={Routes.promenade({ slug })}>
+                    <img className="d-inline-block img-fluid w-100" src={desktopAsset} alt={`Evento ${title}`} />
+                    <div className="featured-spectacles__caption">
+                      <h3 className="featured-spectacles__title px-3">{title}</h3>
+                      <p className="featured-spectacles__desc px-3">{description}</p>
+                    </div>
+                  </Link>
+              ))}
+            </div>
+          </div>
+        );
+      })}
+    </FeaturedSpectaclesCarousel>
   );
 };
 

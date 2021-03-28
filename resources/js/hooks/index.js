@@ -1,3 +1,4 @@
 import useAppState from "./useAppState";
+import useSlider from './useSlider';
 
-export default useAppState;
+export { useAppState, useSlider };
