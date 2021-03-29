@@ -26,6 +26,7 @@
         "@agney/react-loading": "^0.1.2",
         "@primer/octicons-react": "^12.1.0",
         "classnames": "^2.2.6",
+        "dayjs": "^1.10.4",
         "humps": "^2.0.1",
         "prop-types": "^15.7.2",
         "react": "^16.2.0",

@@ -5,3 +5,21 @@ $line-height-base: 1.6;
 
 // Card
 $card-img-top-height: 250px;
+
+// Dater
+$dater-height: 80px;
+
+// Category
+.category__icon {
+  background: url('~/images/sprite-category-32x32.png');
+  width:      24px;
+  height:     24px;
+}
+
+.culture__icon { background-position: 0 429px; }
+.music__icon { background-position: 0 277px; }
+.dance__icon { background-position: 0 0; }
+.theater__icon { background-position: 0 379px; }
+.cinema__icon { background-position: 0 75px; }
+.volunteering__icon { background-position: 0 176px; }
+.adventure__icon { background-position: 0 24px; } // TODO: Fix this icon position, it doesn't exist in the sprite

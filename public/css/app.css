@@ -2,6 +2,68 @@
 @import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
 @import url(http://fonts.googleapis.com/css?family=Amatic+SC);
 @charset "UTF-8";
+.category__icon {
+  background: url(/images/sprite-category-32x32.png?6b402b4cf096815c8201211808351840);
+  width: 24px;
+  height: 24px;
+}
+
+.culture__icon {
+  background-position: 0 429px;
+}
+
+.music__icon {
+  background-position: 0 277px;
+}
+
+.dance__icon {
+  background-position: 0 0;
+}
+
+.theater__icon {
+  background-position: 0 379px;
+}
+
+.cinema__icon {
+  background-position: 0 75px;
+}
+
+.volunteering__icon {
+  background-position: 0 176px;
+}
+
+.adventure__icon {
+  background-position: 0 24px;
+}
+
+.culture {
+  background-color: #f6ad2a;
+}
+
+.music {
+  background-color: #b61fd6;
+}
+
+.dance {
+  background-color: #5b065e;
+}
+
+.theater {
+  background-color: #fa3d42;
+}
+
+.cinema {
+  background-color: #1fb9ec;
+}
+
+.volunteering {
+  background-color: #25dde6;
+}
+
+.adventure {
+  background-color: #00a100;
+}
+
 /*!
  * Bootstrap v4.6.0 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

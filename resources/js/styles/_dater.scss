@@ -1,0 +1,33 @@
+@use '../../sass/app.scss' as *;
+
+.dater {
+  display:        flex;
+  flex-direction: column;
+  position:       relative;
+  padding:        0.2em 0.4em;
+  height:         $dater-height;
+  font-family:    "Oswald";
+  line-height:    1.3em;
+  color:          $white;
+
+  &__day-of-month {
+    font-size: 1.2em;
+  }
+
+  &__day-of-week,
+  &__month {
+    font-size:      1em;
+    text-transform: capitalize;
+  }
+
+  &__year {
+    font-size: 0.8em;
+    opacity:   .5;
+  }
+
+  &__icon {
+    position: absolute;
+    bottom:   0;
+    right:    0;
+  }
+}

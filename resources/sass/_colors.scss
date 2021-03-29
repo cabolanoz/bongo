@@ -13,3 +13,20 @@ $sticky-social-separator-color:  #60615e;
 
 // Card
 $card-caption-background-color: #f7f7f7;
+
+// Category colors
+$culture-bg-color:      #f6ad2a;
+$music-bg-color:        #b61fd6;
+$dance-bg-color:        #5b065e;
+$theater-bg-color:      #fa3d42;
+$cinema-bg-color:       #1fb9ec;
+$volunteering-bg-color: #25dde6;
+$adventure-bg-color:    #00a100;
+
+.culture { background-color: $culture-bg-color; }
+.music { background-color: $music-bg-color; }
+.dance { background-color: $dance-bg-color; }
+.theater { background-color: $theater-bg-color; }
+.cinema { background-color: $cinema-bg-color; }
+.volunteering { background-color: $volunteering-bg-color; }
+.adventure { background-color: $adventure-bg-color; }

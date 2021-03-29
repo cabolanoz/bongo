@@ -1,37 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { showTermsModal, showCollaboratorsModal } from '../../actions';
-import useAppState from '../../hooks/useAppState';
 import { Routes } from '../../const';
 
 import '../../styles/_footer.scss';
 
-const Footer = () => {
-  const [, dispatch] = useAppState();
+const Footer = () => (
+  <footer className="navbar-footer fixed-bottom">
+    <div className="container">
+      <span className="navbar-footer__copyright">Todos los derechos reservados - nosjuimos.com. Un producto del Sofá Rojo S.A.</span>
 
-  const onTermsButtonClick = () => showTermsModal(dispatch);
-  const onCollaboratorsButtonClick = () => showCollaboratorsModal(dispatch);
-
-  return (
-    <footer className="navbar-footer fixed-bottom">
-      <div className="container">
-        <span className="navbar-footer__copyright">Todos los derechos reservados - nosjuimos.com. Un producto del Sofá Rojo S.A.</span>
-
-        <ul className="navbar-nav ml-auto">
-          <a className="navbar-nav__item" onClick={onTermsButtonClick}>TÉRMINOS Y USOS</a>
-          <Link className="navbar-nav__item" to={Routes.root()}>CONTÁCTENOS</Link>
-          <a className="navbar-nav__item" onClick={onCollaboratorsButtonClick}>COLABORADORES</a>
-          <a
-            className="navbar-nav__item"
-            href="http://www.detrasdelsofarojo.com"
-            target="_blank"
-          >
-            <img src="/images/sr-logo.png" alt="Sofá Rojo Logo" />
-          </a>
-        </ul>
-      </div>
-    </footer>
-  );
-};
+      <ul className="navbar-nav ml-auto">
+        <Link className="navbar-nav__item" to={Routes.terms()}>TÉRMINOS Y USOS</Link>
+        <Link className="navbar-nav__item" to={Routes.root()}>CONTÁCTENOS</Link>
+        <Link className="navbar-nav__item" to={Routes.collaborators()}>COLABORADORES</Link>
+        <a
+          className="navbar-nav__item"
+          href="http://www.detrasdelsofarojo.com"
+          target="_blank"
+        >
+          <img src="/images/sr-logo.png" alt="Sofá Rojo Logo" />
+        </a>
+      </ul>
+    </div>
+  </footer>
+);
 
 export default Footer;

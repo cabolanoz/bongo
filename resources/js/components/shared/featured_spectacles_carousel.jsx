@@ -9,7 +9,6 @@ const FeaturedSpectaclesCarousel = ({ children }) => {
   // Hide arrows if there are not enough content in the carousel.
   const onResize = slider => {
     if (!carouselRef.current || !slider) return;
-    console.log(slider, slider.perPage, children.length);
 
     if (slider.perPage >= children.length) {
       carouselRef.current.classList.add('--arrows-hidden');
@@ -23,6 +22,8 @@ const FeaturedSpectaclesCarousel = ({ children }) => {
   const {
     onSliderNext,
     onSliderPrevious,
+    currentSlideIndex,
+    goToSlide,
     hasNext,
     hasPrevious,
     containerRef,
@@ -41,22 +42,32 @@ const FeaturedSpectaclesCarousel = ({ children }) => {
   });
 
   return (
-    <div  className="featured-spectacles" ref={carouselRef}>
-      <button className={leftArrowCssClass} onClick={onSliderPrevious}>
-        <ChevronLeftIcon size="large" />
-      </button>
+    <div className="featured-spectacles__slider">
+      <div  className="featured-spectacles" ref={carouselRef}>
+        <button className={leftArrowCssClass} onClick={onSliderPrevious}>
+          <ChevronLeftIcon size="large" />
+        </button>
 
-      <div className="featured-spectacles__content" ref={containerRef}>
-        {children.map(child => (
-          <div key={child.key}>
-            {child}
-          </div>
-        ))}
+        <div className="featured-spectacles__content" ref={containerRef}>
+          {children.map(child => (
+            <div key={child.key}>
+              {child}
+            </div>
+          ))}
+        </div>
+
+        <button className={rightArrowCssClass} onClick={onSliderNext}>
+          <ChevronRightIcon size="large" />
+        </button>
       </div>
 
-      <button className={rightArrowCssClass} onClick={onSliderNext}>
-        <ChevronRightIcon size="large" />
-      </button>
+      <div className="featured-spectacles__indicator">
+        {children.map((_, index) => {
+          const cssClass = className({ 'active': index === currentSlideIndex });
+
+          return (<li className={cssClass} key={index} onClick={() => goToSlide(index)}></li>)
+        })}
+      </div>
     </div>
   );
 };
