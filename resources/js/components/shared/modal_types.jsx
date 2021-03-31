@@ -1,5 +1,5 @@
 import React from 'react';
-import { Login } from '../forms';
+import Login from '../access/Login';
 import { Terms, Collaborators } from '../misc';
 import { hideModal } from '../../actions';
 import useAppState from '../../hooks/useAppState';

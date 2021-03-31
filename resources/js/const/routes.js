@@ -20,6 +20,11 @@ export const Routes = {
   weGoodLooking: (params = {}) => parameterisedRoute('/salimos-tuani/:slug([0-9a-z-_]+)', params),
   terms: () => '/terminos-y-usos',
   collaborators: () => '/colaboradores',
+  login: () => '/inicia-sesion',
+  forgetPassword: () => '/olvidaste-la-contrasena',
+  signup: () => '/registrate',
+  subscribe: () => '/suscribite',
+  contactUs: () => '/contactanos'
 };
 
 /* Promenade routes */
@@ -39,10 +44,19 @@ export const CHITCHAT_ROUTES = [
 export const WE_GOOD_LOOKING_ROUTES = [
   Routes.weGoodLookings(),
   Routes.weGoodLooking(),
-]
+];
 
 /* Extra routes */
 export const EXTRA_ROUTES = [
   Routes.terms(),
   Routes.collaborators(),
+];
+
+/* Access routes */
+export const ACCESS_ROUTES = [
+  Routes.login(),
+  Routes.forgetPassword(),
+  Routes.signup(),
+  Routes.subscribe(),
+  Routes.contactUs(),
 ];

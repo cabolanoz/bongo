@@ -9,9 +9,13 @@ $card-img-top-height: 250px;
 // Dater
 $dater-height: 80px;
 
+// Form width
+$form-width: 300px;
+
 // Category
 .category__icon {
   background: url('~/images/sprite-category-32x32.png');
+  background-position: 0 1099;
   width:      24px;
   height:     24px;
 }

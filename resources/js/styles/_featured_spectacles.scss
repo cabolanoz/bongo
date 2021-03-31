@@ -151,7 +151,8 @@
     text-overflow:      ellipsis;
     overflow:           hidden;
     font-family:        "Oswald";
-    font-size:          1.2em;
+    font-size:          1.6em;
+    text-transform:     uppercase;
     -webkit-transform:  translate3d(0, -90%, 0);
     transform:          translate3d(0, -90%, 0);
     -webkit-transition: -webkit-transform 0.35s, color 0.35s;
@@ -167,8 +168,10 @@
     white-space:        nowrap;
     text-overflow:      ellipsis;
     overflow:           hidden;
+    line-clamp:         2;
+    -webkit-line-clamp: 2;
     font-family:        "Source Sans Pro";
-    font-size:          0.8em;
+    font-size:          1em;
     opacity:            0;
     -webkit-transform:  translate3d(0, 10px, 0);
     transform:          translate3d(0, 10px, 0);

@@ -33,3 +33,9 @@ Route::prefix('salimos-tuani')->group(function() {
 
 Route::get('/terminos-y-usos', [WelcomeController::class, 'index']);
 Route::get('/colaboradores', [WelcomeController::class, 'index']);
+
+Route::get('/inicia-sesion', [WelcomeController::class, 'index']);
+Route::get('/olvidaste-la-contrasena', [WelcomeController::class, 'index']);
+Route::get('/registrate', [WelcomeController::class, 'index']);
+Route::get('/suscribite', [WelcomeController::class, 'index']);
+Route::get('/contactanos', [WelcomeController::class, 'index']);

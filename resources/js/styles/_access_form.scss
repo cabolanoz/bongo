@@ -1,0 +1,31 @@
+@use '../../sass/app.scss' as *;
+
+.access-form {
+  width: $form-width;
+
+  &__title {
+    font-family:    "Oswald";
+    text-transform: uppercase;
+  }
+
+  &__desc {
+    font-family: "Source Sans Pro";
+    line-height: 1.5em;
+  }
+
+  &__form {
+    .form-label {
+      font-family: "Source Sans Pro";
+      font-weight: bolder;
+    }
+
+    .form-control {
+      border-radius: 0;
+      font-family:   "Source Sans Pro";
+    }
+
+    .btn {
+      border-radius: 0;
+    }
+  }
+}

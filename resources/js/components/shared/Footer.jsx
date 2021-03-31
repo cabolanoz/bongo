@@ -11,7 +11,7 @@ const Footer = () => (
 
       <ul className="navbar-nav ml-auto">
         <Link className="navbar-nav__item" to={Routes.terms()}>TÉRMINOS Y USOS</Link>
-        <Link className="navbar-nav__item" to={Routes.root()}>CONTÁCTENOS</Link>
+        <Link className="navbar-nav__item" to={Routes.contactUs()}>CONTACTANOS</Link>
         <Link className="navbar-nav__item" to={Routes.collaborators()}>COLABORADORES</Link>
         <a
           className="navbar-nav__item"

@@ -4,6 +4,7 @@
 @charset "UTF-8";
 .category__icon {
   background: url(/images/sprite-category-32x32.png?6b402b4cf096815c8201211808351840);
+  background-position: 0 1099;
   width: 24px;
   height: 24px;
 }
@@ -62,6 +63,34 @@
 
 .adventure {
   background-color: #00a100;
+}
+
+.culture__text {
+  color: #f6ad2a;
+}
+
+.music__text {
+  color: #b61fd6;
+}
+
+.dance__text {
+  color: #5b065e;
+}
+
+.theater__text {
+  color: #fa3d42;
+}
+
+.cinema__text {
+  color: #1fb9ec;
+}
+
+.volunteering__text {
+  color: #25dde6;
+}
+
+.adventure__text {
+  color: #00a100;
 }
 
 /*!
@@ -10084,13 +10113,15 @@ body {
   min-height: 100%;
   position: relative;
 }
-#app main.promenade,
+#app main.promenade-list,
+#app main.promenade-show,
 #app main.album-list,
 #app main.album-show {
   padding-bottom: 12em;
 }
 @media (min-width: 992px) {
-  #app main.promenade,
+  #app main.promenade-list,
+#app main.promenade-show,
 #app main.album-list,
 #app main.album-show {
     padding-bottom: 3em;

@@ -26,6 +26,34 @@
   background-color: #00a100;
 }
 
+.culture__text {
+  color: #f6ad2a;
+}
+
+.music__text {
+  color: #b61fd6;
+}
+
+.dance__text {
+  color: #5b065e;
+}
+
+.theater__text {
+  color: #fa3d42;
+}
+
+.cinema__text {
+  color: #1fb9ec;
+}
+
+.volunteering__text {
+  color: #25dde6;
+}
+
+.adventure__text {
+  color: #00a100;
+}
+
 .message {
   font-family: "Oswald";
   font-size: 1.5rem;
