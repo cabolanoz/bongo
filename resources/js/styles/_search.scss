@@ -13,6 +13,7 @@
     padding:            0 10% 0 10px;
     font-weight:        700;
     font-family:        "Source Sans Pro";
+    text-transform:     uppercase;
     border:             none;
     background:         transparent;
     font-size:          7em;
@@ -58,8 +59,21 @@
     }
 
     @media screen and (max-width: 53.125em) {
+      top:               30%;
       -webkit-transform: translate3d(0, -50%, 0) scale3d(0.5, 0.5, 1);
 		  transform:         translate3d(0, -50%, 0) scale3d(0.5, 0.5, 1);
     }
+  }
+
+  &__error {
+    color:          $danger;
+    text-transform: uppercase;
+    font-family:    "Source Sans Pro";
+    font-size:      .9em;
+  }
+
+  &__separator {
+    margin: .4em 0;
+    border: none;
   }
 }

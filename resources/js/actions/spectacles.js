@@ -1,6 +1,15 @@
 import { api } from '../utils';
 import { PROMENADE_TYPE, CHITCHAT_TYPE } from './types';
 
+export const searchSpectacles = async (dispatch, searchTerm) => {
+  try {
+    const { data } = await api.searchSpectacles({ search: searchTerm });
+    dispatch({ data });
+  } catch ({ message }) {
+    dispatch({ error: message });
+  }
+};
+
 export const fetchPromenades = async dispatch => {
   try {
     const { data } = await api.getSpectacles({ type: PROMENADE_TYPE });

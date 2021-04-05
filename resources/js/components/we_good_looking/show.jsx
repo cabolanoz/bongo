@@ -44,7 +44,7 @@ const Show = () => { // TODO: Investigate (or create lazy component) for loading
           </div>
         </div>
         <div className="row">
-          <div className="col-md-2 col-3 offset-md-5 offset-5 my-3">
+          <div className="col-md-2 col-3 offset-md-5 offset-5 mt-3">
             <Link className="btn btn-dark btn-block text-uppercase" to={Routes.weGoodLookings()}>VER MÁS</Link>
           </div>
         </div>

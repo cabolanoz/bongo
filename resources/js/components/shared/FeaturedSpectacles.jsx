@@ -26,7 +26,7 @@ const FeaturedSpectacles = ({ spectacles }) => {
                 <img className="d-inline-block img-fluid w-100" src={desktopAsset} alt={`Evento ${title}`} />
                 <div className="featured-spectacles__caption">
                   <h3 className="featured-spectacles__title px-3">{title}</h3>
-                  <p className="featured-spectacles__desc px-3">{description}</p>
+                  <p className="featured-spectacles__desc px-3" dangerouslySetInnerHTML={{ __html: description }}></p>
                 </div>
               </Link>
             </div>
@@ -39,7 +39,7 @@ const FeaturedSpectacles = ({ spectacles }) => {
                     <img className="d-inline-block img-fluid w-100" src={desktopAsset} alt={`Evento ${title}`} />
                     <div className="featured-spectacles__caption">
                       <h3 className="featured-spectacles__title px-3">{title}</h3>
-                      <p className="featured-spectacles__desc px-3">{description}</p>
+                      <p className="featured-spectacles__desc px-3" dangerouslySetInnerHTML={{ __html: description }}></p>
                     </div>
                   </Link>
               ))}

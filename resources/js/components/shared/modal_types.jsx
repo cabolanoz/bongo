@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search } from '../misc';
+import Search from './Search';
 import { hideModal } from '../../actions';
 import useAppState from '../../hooks/useAppState';
 import ModalBase from './modal_base';

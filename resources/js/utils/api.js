@@ -69,6 +69,10 @@ class Api {
    * API methods.
    */
 
+  async searchSpectacles(params) {
+    return this.get('/spectacles/search', params);
+  }
+
   async getSpectacles(params) {
     return this.get('/spectacles', params);
   }
