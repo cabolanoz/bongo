@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { hideModal } from '../../actions';
 import useAppState from '../../hooks/useAppState';
 import { ModalName } from '../../const';
-import { LoginModal, TermsModal, CollaboratorsModal } from './modal_types';
+import { SearchModal } from './modal_types';
 
 const Modal = () => {
   const [{ modal = null }, dispatch] = useAppState();
@@ -21,12 +21,8 @@ const Modal = () => {
   }, [modal]);
 
   switch (modal) {
-    case ModalName.login:
-      return <LoginModal />;
-    case ModalName.terms:
-      return <TermsModal />;
-    case ModalName.collaborators:
-      return <CollaboratorsModal />;
+    case ModalName.search:
+      return <SearchModal />;
     default:
       return null;
   }

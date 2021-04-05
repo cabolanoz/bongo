@@ -28,6 +28,7 @@ header.navbar__header {
             padding:         0 0.8em;
             text-transform:  uppercase;
             text-decoration: none;
+            cursor:          pointer;
 
             &--active {
               @extend .navbar-nav__item; // TODO: WTF, this should inherit __item style from BEM notation

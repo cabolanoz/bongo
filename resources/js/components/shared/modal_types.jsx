@@ -1,6 +1,5 @@
 import React from 'react';
-import Login from '../access/Login';
-import { Terms, Collaborators } from '../misc';
+import { Search } from '../misc';
 import { hideModal } from '../../actions';
 import useAppState from '../../hooks/useAppState';
 import ModalBase from './modal_base';
@@ -13,22 +12,8 @@ export const NoModal = () => {
   return null;
 };
 
-export const LoginModal = () => (
+export const SearchModal = () => (
   <ModalBase>
-    <div className="modal-dialog modal-dialog-centered">
-      <Login />
-    </div>
-  </ModalBase>
-);
-
-export const TermsModal = () => (
-  <ModalBase>
-    <Terms />
-  </ModalBase>
-);
-
-export const CollaboratorsModal = () => (
-  <ModalBase>
-    <Collaborators />
+    <Search />
   </ModalBase>
 );

@@ -1,4 +1,5 @@
 import Terms from './Terms';
 import Collaborators from './Collaborators';
+import Search from './Search';
 
-export { Terms, Collaborators };
+export { Terms, Collaborators, Search };

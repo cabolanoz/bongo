@@ -13,7 +13,4 @@ export const showModal = (dispatch, modal) => {
   }
 };
 
-export const showLoginModal = dispatch => showModal(dispatch, ModalName.login);
-export const showSignupModal = dispatch => showModal(dispatch, ModalName.signup);
-export const showTermsModal = dispatch => showModal(dispatch, ModalName.terms);
-export const showCollaboratorsModal = dispatch => showModal(dispatch, ModalName.collaborators);
+export const showSearchModal = dispatch => showModal(dispatch, ModalName.search);

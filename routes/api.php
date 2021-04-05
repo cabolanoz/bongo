@@ -24,6 +24,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('spectacles/search', [SpectacleController::class, 'search'])->name('spectacles.search');
+
 Route::apiResources([
     'categories' => CategoryController::class,
     'albums' => AlbumController::class,

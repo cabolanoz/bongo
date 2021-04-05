@@ -1,10 +1,3 @@
-export const ModalName = Object.freeze({
-  login: 'login',
-  signup: 'signup',
-  subscribe: 'subscribe',
-  contactUs: 'contactUs',
-  terms: 'terms',
-  collaborators: 'collaborators'
-});
+export const ModalName = Object.freeze({ search: 'search' });
 
 export * from './routes';

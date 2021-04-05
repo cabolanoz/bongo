@@ -43,7 +43,7 @@ const CollaboratorThumbnail = ({ logo, siteUrl, collaborator }) => {
   const path = collaborator ? COLLABORATOR_PATH : ALLY_PATH;
 
   return (
-    <div className="col-md-2 col-sm-3 col-6 collaborators__wrapper">
+    <div className="col-md-2 col-sm-3 col-6 collaborators__wrapper d-inline-block">
       <a className="collaborators__thumbnail" href={url} target={target}>
         <img src={path.concat(logo)} alt="Logo Colaborador" className="img-fluid"/>
       </a>
@@ -60,7 +60,9 @@ const Collaborators = () => (
         </div>
       </div>
       <div className="row">
-        {COLLABORATORS.map(collaborator => <CollaboratorThumbnail key={collaborator.logo} {...collaborator} collaborator />)}
+        <div className="col-md-12">
+          {COLLABORATORS.map(collaborator => <CollaboratorThumbnail key={collaborator.logo} {...collaborator} collaborator />)}
+        </div>
       </div>
       <div className="row">
         <div className="col-md-12">
@@ -68,7 +70,9 @@ const Collaborators = () => (
         </div>
       </div>
       <div className="row">
-        {ALLIES.map(ally => <CollaboratorThumbnail key={ally.logo} {...ally} />)}
+        <div className="col-md-12">
+          {ALLIES.map(ally => <CollaboratorThumbnail key={ally.logo} {...ally} />)}
+        </div>
       </div>
     </div>
   </div>

@@ -18,7 +18,11 @@ class SpectacleController extends Controller
     public function index(Request $request)
     {
         $type = $request->query('type');
-        $spectacles = Spectacle::where('type', $type)->published()->take(15);
+
+        $spectacles = Spectacle::where('type', $type)
+                               ->published()
+                               ->take(15);
+
         return new SpectacleCollection($spectacles);
     }
 
@@ -42,7 +46,12 @@ class SpectacleController extends Controller
     public function show(Request $request, $slug)
     {
         $type = $request->query('type');
-        $spectacle = Spectacle::where('type', $type)->where('slug', $slug)->published()->first();
+
+        $spectacle = Spectacle::where('type', $type)
+                              ->where('slug', $slug)
+                              ->published()
+                              ->first();
+
         return new SpectacleResource($spectacle);
     }
 
@@ -70,6 +79,28 @@ class SpectacleController extends Controller
     }
 
     /**
+     * Search all type of spectacles.
+     * 
+     * @return \Illuminate\Http\Response
+     */
+    public function search(Request $request)
+    {
+        $search = $request->query('search');
+        $type = $request->query('type');
+
+        $spectacles = Spectacle::where('title', 'LIKE', '%' . $search . '%');
+
+        if ($type)
+        {
+            $spectacles = $spectacles->where('type', $type);
+        }
+
+        $spectacles = $spectacles->published();
+
+        return new SpectacleCollection($spectacles);
+    }
+
+    /**
      * Display the specified resource.
      *
      * @param  string  $slug
@@ -77,7 +108,10 @@ class SpectacleController extends Controller
      */
     public function promenade($slug)
     {
-        $spectacle = Spectacle::where('type', 'promenade')->where('slug', $slug)->published()->first();
+        $spectacle = Spectacle::where('type', 'promenade')
+                              ->where('slug', $slug)
+                              ->published()
+                              ->first();
 
         if ($spectacle)
         {
@@ -97,7 +131,10 @@ class SpectacleController extends Controller
      */
     public function chitchat($slug)
     {
-        $spectacle = Spectacle::where('type', 'chitchat')->where('slug', $slug)->published()->first();
+        $spectacle = Spectacle::where('type', 'chitchat')
+                              ->where('slug', $slug)
+                              ->published()
+                              ->first();
 
         if ($spectacle)
         {

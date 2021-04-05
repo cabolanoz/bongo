@@ -5,7 +5,7 @@ import { Routes } from '../../const';
 import '../../styles/_footer.scss';
 
 const Footer = () => (
-  <footer className="navbar-footer fixed-bottom">
+  <footer className="navbar-footer">
     <div className="container">
       <span className="navbar-footer__copyright">Todos los derechos reservados - nosjuimos.com. Un producto del Sofá Rojo S.A.</span>
 
