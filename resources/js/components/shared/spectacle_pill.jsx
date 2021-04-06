@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import SpectacleDate from './spectacle_date';
-import { Routes } from '../../const';
+import { RouteTo } from '../../utils';
 
 import '../../styles/_spectacle_pill.scss';
 
-const SpectaclePill = ({ title, slug, description, author, desktopAsset, startDate, category, onClick }) => (
-  <Link className="spectacle-pill" onClick={onClick} to={Routes.promenade({ slug })}>
+const SpectaclePill = ({ title, slug, description, author, desktopAsset, startDate, category, type, onClick }) => (
+  <Link className="spectacle-pill" onClick={onClick} to={RouteTo(type, slug)}>
     <img src={desktopAsset} alt={title} className="img-fluid spectacle-pill__img"/>
     <SpectacleDate startDate={startDate} categoryClass={category.cssClass} />
     <div className="spectacle-pill__caption">

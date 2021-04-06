@@ -79,6 +79,21 @@ class SpectacleController extends Controller
     }
 
     /**
+     * Display a listing of prominent spectacles
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function prominents(Request $request)
+    {
+        $type = $request->query('type');
+        $spectacles = Spectacle::where('type', $type)
+                               ->prominent()
+                               ->take(3);
+
+        return new SpectacleCollection($spectacles);
+    }
+
+    /**
      * Search all type of spectacles.
      * 
      * @return \Illuminate\Http\Response

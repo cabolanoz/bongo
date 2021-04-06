@@ -81,6 +81,10 @@ class Api {
     return this.get(`/spectacles/${slug}`, params);
   }
 
+  async getProminentSpectacles(params) {
+    return this.get('/spectacles/prominents', params);
+  }
+
   async getAlbums() {
     return this.get('albums');
   }

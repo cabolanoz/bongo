@@ -1,3 +1,6 @@
+import { PROMENADE_TYPE, CHITCHAT_TYPE } from '../actions/types';
+import { Routes } from '../const';
+
 const defaultAspectRatios = [1, 2, 3, 4];
 
 export const getRandomAspectRatio = () =>
@@ -17,4 +20,15 @@ export const reduceFeaturedSpectacles = (spectacles, factor = 5) => {
   }
 
   return acc;
+};
+
+export const RouteTo = (type, slug) => {
+  switch (type) {
+    case PROMENADE_TYPE:
+      return Routes.promenade({ slug });
+    case CHITCHAT_TYPE:
+      return Routes.chitchat({ slug });
+    default:
+      return Routes.root();
+  }
 };

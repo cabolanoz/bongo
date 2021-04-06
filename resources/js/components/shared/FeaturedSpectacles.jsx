@@ -2,8 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import FeaturedSpectaclesCarousel from './featured_spectacles_carousel';
 import SpectacleDate from './spectacle_date';
-import { Routes } from '../../const';
-import { reduceFeaturedSpectacles } from '../../utils'
+import { reduceFeaturedSpectacles, RouteTo } from '../../utils'
 
 import '../../styles/_featured_spectacles.scss';
 
@@ -13,13 +12,13 @@ const FeaturedSpectacles = ({ spectacles }) => {
   return (
     <FeaturedSpectaclesCarousel key={spectaclesGroup.length}>
       {spectaclesGroup.map((spectacles) => {
-        const { id, title, slug, description, desktopAsset, startDate, category } = spectacles[0];
+        const { id, title, slug, description, desktopAsset, startDate, category, type } = spectacles[0];
         const otherSpectacles = spectacles.slice(1);
 
         return (
           <div className="featured-spectacles__carousel-item" key={id}>
             <div className="featured-spectacles__item">
-              <Link className="featured-spectacles__figure" to={Routes.promenade({ slug })}>
+              <Link className="featured-spectacles__figure" to={RouteTo(type, slug)}>
                 <div className="featured-spectacles__dater">
                   <SpectacleDate startDate={startDate} categoryClass={category.cssClass} />
                 </div>
@@ -31,8 +30,8 @@ const FeaturedSpectacles = ({ spectacles }) => {
               </Link>
             </div>
             <div className="featured-spectacles__item">
-              {otherSpectacles.map(({ id, title, slug, description, desktopAsset, startDate, category }) => (
-                  <Link className="featured-spectacles__figure" key={id} to={Routes.promenade({ slug })}>
+              {otherSpectacles.map(({ id, title, slug, description, desktopAsset, startDate, category, type }) => (
+                  <Link className="featured-spectacles__figure" key={id} to={RouteTo(type, slug)}>
                     <div className="featured-spectacles__dater">
                       <SpectacleDate startDate={startDate} categoryClass={category.cssClass} />
                     </div>

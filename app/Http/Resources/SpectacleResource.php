@@ -25,8 +25,9 @@ class SpectacleResource extends JsonResource
             'start_date' => $this->start_date,
             'end_date' => $this->end_date,
             'type' => $this->type,
-            'published' => $this->published,
             'category' => $this->category,
+            'prominent' => $this->prominent,
+            'published' => $this->published,
         ];
     }
 }

@@ -25,6 +25,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('spectacles/search', [SpectacleController::class, 'search'])->name('spectacles.search');
+Route::get('spectacles/prominents', [SpectacleController::class, 'prominents'])->name('spectacles.prominents');
 
 Route::apiResources([
     'categories' => CategoryController::class,

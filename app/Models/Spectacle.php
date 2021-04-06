@@ -25,6 +25,7 @@ class Spectacle extends Model
         'end_date',
         'type',
         'category_id',
+        'prominent',
         'published',
     ];
 
@@ -52,6 +53,17 @@ class Spectacle extends Model
     public function scopePublished($query)
     {
         return $query->where('published', 1)->get();
+    }
+
+    /**
+     * Scope a query to only include prominent spectacles.
+     *
+     * @param  \Illuminate\Databse\Eloquent\Builder  $query
+     * @return \Illiminate\Database\Eloquent\Builder
+     */
+    public function scopeProminent($query)
+    {
+        return $query->where('prominent', 1)->published();
     }
 
     /**
