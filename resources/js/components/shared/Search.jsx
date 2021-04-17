@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import SpectaclePill from './spectacle_pill';
-import { searchSpectacles, hideModal } from '../../actions';
+import { searchPromenades, searchChitchats, hideModal } from '../../actions';
 import useAppState from '../../hooks/useAppState';
 
 import '../../styles/_search.scss';
@@ -28,7 +28,8 @@ const Search = () => {
 
     setShowError(false);
     setSpectacles([]);
-    searchSpectacles(onSearchSpectacles, searchTerm);
+    // TODO: Here's I should have a conditional for promenades | chitchats
+    searchPromenades(onSearchSpectacles, searchTerm);
   };
 
   const onHideModal = () => hideModal(dispatch);

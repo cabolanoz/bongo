@@ -9,7 +9,7 @@ const Show = () => {
   const [promenade, setPromenade] = useState({});
 
   const onFetchPromenade = ({ data, error }) => {
-    if (error) console.error('There was an error while trying to fetch albums.');
+    if (error) console.error('There was an error while trying to fetch the promenade.');
 
     setPromenade(data);
   };

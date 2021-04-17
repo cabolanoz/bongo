@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AlbumController;
 use App\Http\Controllers\PhotoController;
-use App\Http\Controllers\SpectacleController;
+use App\Http\Controllers\PromenadeController;
+use App\Http\Controllers\ChitchatController;
 use App\Http\Controllers\CommercialController;
 
 /*
@@ -24,13 +25,16 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('spectacles/search', [SpectacleController::class, 'search'])->name('spectacles.search');
-Route::get('spectacles/prominents', [SpectacleController::class, 'prominents'])->name('spectacles.prominents');
+Route::get('promenades/search', [PromenadeController::class, 'search'])->name('promenades.search');
+Route::get('promenades/prominents', [PromenadeController::class, 'prominents'])->name('promenades.prominents');
+Route::get('chitchats/search', [ChitchatController::class, 'search'])->name('chitchats.search');
+Route::get('chitchats/prominents', [ChitchatController::class, 'prominents'])->name('chitchats.prominents');
 
 Route::apiResources([
     'categories' => CategoryController::class,
     'albums' => AlbumController::class,
     'photos' => PhotoController::class,
-    'spectacles' => SpectacleController::class,
+    'promenades' => PromenadeController::class,
+    'chitchats' => ChitchatController::class,
     'commercials' => CommercialController::class,
 ]);

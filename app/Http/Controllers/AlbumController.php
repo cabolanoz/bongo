@@ -66,12 +66,12 @@ class AlbumController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Determine to render 404 when slug doesn't exists
      *
      * @param  string  $slug
      * @return \Illuminate\Http\Response
      */
-    public function album($slug)
+    public function exists($slug)
     {
         $album = Album::where('slug', $slug)->first();
 

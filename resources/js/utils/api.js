@@ -69,22 +69,41 @@ class Api {
    * API methods.
    */
 
-  async searchSpectacles(params) {
-    return this.get('/spectacles/search', params);
+  /** Promenades */
+  async getPromenades() {
+    return this.get('/promenades');
   }
 
-  async getSpectacles(params) {
-    return this.get('/spectacles', params);
+  async getPromenade(slug) {
+    return this.get(`/promenades/${slug}`);
   }
 
-  async getSpectacle(slug, params) {
-    return this.get(`/spectacles/${slug}`, params);
+  async getProminentPromenades() {
+    return this.get('/promenades/prominents');
   }
 
-  async getProminentSpectacles(params) {
-    return this.get('/spectacles/prominents', params);
+  async searchPromenades(params) {
+    return this.get('/promenades/search', params);
   }
 
+  /** Chitchats */
+  async getChitchats() {
+    return this.get('/chitchats');
+  }
+
+  async getChitchat(slug) {
+    return this.get(`/chitchats/${slug}`);
+  }
+
+  async getProminentChitchats() {
+    return this.get('/chitchats/prominents');
+  }
+
+  async searchChitchats(params) {
+    return this.get('/chitchats/search', params);
+  }
+
+  /** Albums */
   async getAlbums() {
     return this.get('albums');
   }

@@ -21,7 +21,7 @@ const List = () => {
 
   return (
     <main className="chitchat-list">
-      {featuredChitchats && (
+      {featuredChitchats.length > 0 && (
         <div className="bg-nj-gray">
           <div className="container">
             <div className="row">
@@ -35,7 +35,7 @@ const List = () => {
           </div>
         </div>
       )}
-      {prominentChitchats && (
+      {prominentChitchats.length > 0 && (
         <div className="bg-nj-gray">
           <div className="container">
             <div className="row">

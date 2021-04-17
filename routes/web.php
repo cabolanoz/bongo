@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\WelcomeController;
-use App\Http\Controllers\SpectacleController;
+use App\Http\Controllers\PromenadeController;
+use App\Http\Controllers\ChitchatController;
 use App\Http\Controllers\AlbumController;
 
 /*
@@ -20,15 +21,15 @@ use App\Http\Controllers\AlbumController;
 Route::get('/', [WelcomeController::class, 'index']);
 Route::prefix('juimonos')->group(function() {
     Route::get('/', [WelcomeController::class, 'index']);
-    Route::get('/{slug}', [SpectacleController::class, 'promenade'])->where('slug', '[0-9a-z-_]+');
+    Route::get('/{slug}', [PromenadeController::class, 'exists'])->where('slug', '[0-9a-z-_]+');
 });
 Route::prefix('tula-cuecho')->group(function() {
     Route::get('/', [WelcomeController::class, 'index']);
-    Route::get('/{slug}', [SpectacleController::class, 'chitchat'])->where('slug', '[0-9a-z-_]+');
+    Route::get('/{slug}', [ChitchatController::class, 'exists'])->where('slug', '[0-9a-z-_]+');
 });
 Route::prefix('salimos-tuani')->group(function() {
     Route::get('/', [WelcomeController::class, 'index']);
-    Route::get('/{slug}', [AlbumController::class, 'album'])->where('slug', '[0-9a-z-_]+');
+    Route::get('/{slug}', [AlbumController::class, 'exists'])->where('slug', '[0-9a-z-_]+');
 });
 
 Route::get('/terminos-y-usos', [WelcomeController::class, 'index']);

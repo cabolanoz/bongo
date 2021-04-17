@@ -28,7 +28,7 @@ const List = () => {
           </div>
         </div>
       </div>
-      {featuredPromenades && (
+      {featuredPromenades.length > 0 && (
         <div className="bg-nj-gray">
           <div className="container">
             <div className="row">
@@ -42,7 +42,7 @@ const List = () => {
           </div>
         </div>
       )}
-      {prominentPromenades && (
+      {prominentPromenades.length > 0 && (
         <div className="bg-nj-gray">
           <div className="container">
             <div className="row">

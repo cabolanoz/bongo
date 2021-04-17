@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             CategorySeeder::class,
             AlbumSeeder::class,
-            SpectacleSeeder::class,
+            PromenadeSeeder::class,
+            ChitchatSeeder::class,
             CommercialSeeder::class,
         ]);
     }

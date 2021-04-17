@@ -13,7 +13,7 @@ const Show = () => { // TODO: Investigate (or create lazy component) for loading
   const [album, setAlbum] = useState({});
 
   const onFetchAlbum = ({ data, error }) => {
-    if (error) console.error('There was an error while trying to fetch albums.');
+    if (error) console.error('There was an error while trying to fetch the album.');
 
     setAlbum(data);
   };

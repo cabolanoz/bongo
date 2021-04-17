@@ -12,8 +12,9 @@ const SpectaclePill = ({ title, slug, description, author, desktopAsset, startDa
     <div className="spectacle-pill__caption">
       <h6 className="spectacle-pill__title mb-1">{title}</h6>
       <div className="spectacle-pill__author">
-        <h6 className="spectacle-pill__author-name">{author}&nbsp;|</h6>
-        <h6 className={`spectacle-pill__author-category ${category.cssClass}__text`}>&nbsp;{category.name}</h6>
+        <h6 className="spectacle-pill__author-name">{author}</h6>
+        <h6 className="spectacle-pill__author-separator">&nbsp;|&nbsp;</h6>
+        <h6 className={`spectacle-pill__author-category ${category.cssClass}__text`}>{category.name}</h6>
       </div>
       <p className="spectacle-pill__desc m-0 mt-auto" dangerouslySetInnerHTML={{ __html: description }}></p>
     </div> 
